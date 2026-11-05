@@ -1,0 +1,167 @@
+{
+  "version": "2.2.1",
+  "schritt": 2,
+  "offline": true,
+  "python": {
+    "3.11.18": {
+      "bestanden": 436,
+      "sekunden": 67.21,
+      "fehlgeschlagen": 0,
+      "uebersprungen": 0,
+      "umgebung": "Frisch aus uv.lock; uv sync --locked --offline mit explizitem Zielinterpreter (Cloud-Container, langsamer als Mac)"
+    },
+    "3.13.18": {
+      "bestanden": 436,
+      "sekunden": 66.41,
+      "fehlgeschlagen": 0,
+      "uebersprungen": 0,
+      "umgebung": "Frisch aus uv.lock; uv sync --locked --offline mit explizitem Zielinterpreter (Cloud-Container, langsamer als Mac)"
+    }
+  },
+  "laufzeiten_s": {
+    "erster_lauf_s": 5.566,
+    "folgelauf_s": 0.355,
+    "jahreswechsel_s": 0.278,
+    "erster_lauf_warm_s": 3.129
+  },
+  "browser": {
+    "breite": 1440,
+    "tabs": [
+      {
+        "titel": "Cockpit",
+        "position": {
+          "x": 380,
+          "y": 439.609375,
+          "width": 75.890625,
+          "height": 40
+        }
+      },
+      {
+        "titel": "Portfolio",
+        "position": {
+          "x": 459.078125,
+          "y": 439.609375,
+          "width": 80.890625,
+          "height": 40
+        }
+      },
+      {
+        "titel": "Prozesse",
+        "position": {
+          "x": 543.15625,
+          "y": 439.609375,
+          "width": 86.046875,
+          "height": 40
+        }
+      },
+      {
+        "titel": "Scorecard",
+        "position": {
+          "x": 632.390625,
+          "y": 439.609375,
+          "width": 93.71875,
+          "height": 40
+        }
+      },
+      {
+        "titel": "KI-Analyst",
+        "position": {
+          "x": 729.296875,
+          "y": 439.609375,
+          "width": 95.015625,
+          "height": 40
+        }
+      },
+      {
+        "titel": "Bericht",
+        "position": {
+          "x": 827.5,
+          "y": 439.609375,
+          "width": 71.953125,
+          "height": 40
+        }
+      },
+      {
+        "titel": "Agent & Audit",
+        "position": {
+          "x": 902.640625,
+          "y": 439.609375,
+          "width": 117.515625,
+          "height": 40
+        }
+      }
+    ],
+    "javascript_fehler": [],
+    "sicherheitstests": 2,
+    "freigabe_und_export": "erfolgreich"
+  },
+  "ruff": {
+    "regulaer": 0,
+    "E501": 0,
+    "regelaenderung": false,
+    "maximale_python_zeilenlaenge": 120
+  },
+  "suite_abgleich": {
+    "referenzen": 18,
+    "maximale_abweichung_pct": 0,
+    "fehler_cent": 0,
+    "kostenabgleich": {
+      "jahre": [
+        2024,
+        2025,
+        2026
+      ],
+      "felder": [
+        "umsatz",
+        "hk",
+        "db_i",
+        "kostenstellen",
+        "ebit"
+      ],
+      "fehler_cent": 0,
+      "ebit_cent": {
+        "2024": 794675330,
+        "2025": 872044156,
+        "2026": 562925960
+      },
+      "kostenzeilen": 254,
+      "plan_2026_kostenzeilen": 69
+    },
+    "kundenabgleich": {
+      "kunden": 12,
+      "referenzzellen": 396,
+      "umschluesselungen": 4,
+      "fehler_cent": 0
+    }
+  },
+  "o2c_abgleich": {
+    "stichtage": 11,
+    "kunden_stichtage": 132,
+    "maximaler_fehler_cent": 0,
+    "maximaler_dso_beitragsfehler_tage": 7.105427357601002e-15,
+    "faelle": 3244
+  },
+  "ui": {
+    "tabs": 7,
+    "leitfragen_je_seite": 1,
+    "agentenkarten": 7,
+    "trichterstufen": 6,
+    "sicherheitstests": 2
+  },
+  "desktop_bytegleich_ausser_app_toml": true,
+  "schritt2_ausgefuehrt": true,
+  "app_zeilen": 285,
+  "dokumentpruefung": {
+    "docx": 4,
+    "pdf_seiten_visuell_geprueft": 34,
+    "arabisch_rtl": true,
+    "seiten": {
+      "SAP-Anbindung DE": 7,
+      "Kennzahlen_und_Diagramme DE": 9,
+      "SAP-Anbindung AR": 8,
+      "Kennzahlen_und_Diagramme AR": 10
+    }
+  },
+  "entfernte_tests": 0,
+  "neue_tests": 13
+}

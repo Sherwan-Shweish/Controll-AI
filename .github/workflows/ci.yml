@@ -1,0 +1,19 @@
+name: Prüfungen
+on: [push, pull_request]
+jobs:
+  pruefung:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Umgebung aus Lockdatei
+        run: uv sync --locked --python ${{ matrix.python-version }}
+      - name: Codeprüfung
+        run: uv run --no-sync ruff check .
+      - name: Zeilenlänge
+        run: uv run --no-sync ruff check . --select E501
+      - name: Tests
+        run: uv run --no-sync pytest -q

@@ -1,0 +1,5870 @@
+{
+ "seed": 42,
+ "quelle": "VarianceAI 1.2, src/seed_data.erzeuge_daten(seed=42); Ist ohne Demonstrationsdublette 9099999999",
+ "stichtag": "2026-09-30",
+ "werte": [
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 97342143,
+   "hk_cent": 43256277
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 77696675,
+   "hk_cent": 34505269
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 61020875,
+   "hk_cent": 27140113
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 41765652,
+   "hk_cent": 18562336
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 54670098,
+   "hk_cent": 23085804
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 43630156,
+   "hk_cent": 18422008
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 34820746,
+   "hk_cent": 14703346
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 23697024,
+   "hk_cent": 10006227
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 68306952,
+   "hk_cent": 31830770
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 55828667,
+   "hk_cent": 25975172
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 43640684,
+   "hk_cent": 20433676
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 29948836,
+   "hk_cent": 13984142
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 114941206,
+   "hk_cent": 51104962
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 91954866,
+   "hk_cent": 40830092
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 72775793,
+   "hk_cent": 32362733
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 49418246,
+   "hk_cent": 21964130
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 66306835,
+   "hk_cent": 28001842
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 52694162,
+   "hk_cent": 22252040
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 41144515,
+   "hk_cent": 17375038
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 28533604,
+   "hk_cent": 12050692
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 80356917,
+   "hk_cent": 37621644
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 66522299,
+   "hk_cent": 31092158
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 52968463,
+   "hk_cent": 24804434
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 36254606,
+   "hk_cent": 16871964
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 86976876,
+   "hk_cent": 38672328
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 69415884,
+   "hk_cent": 30849342
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 54596121,
+   "hk_cent": 24255153
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 38538998,
+   "hk_cent": 17124140
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 48886005,
+   "hk_cent": 20643507
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 39616868,
+   "hk_cent": 16730672
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 30587587,
+   "hk_cent": 12919684
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 21497403,
+   "hk_cent": 9079182
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 62348594,
+   "hk_cent": 29100950
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 49137411,
+   "hk_cent": 22994072
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 38933962,
+   "hk_cent": 18174054
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 27236165,
+   "hk_cent": 12723932
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 100502171,
+   "hk_cent": 44682101
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 78857892,
+   "hk_cent": 35060182
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 63647884,
+   "hk_cent": 28292762
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 43050603,
+   "hk_cent": 19144849
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 57219974,
+   "hk_cent": 24167066
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 45193472,
+   "hk_cent": 19086365
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 35494625,
+   "hk_cent": 14986979
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 23633727,
+   "hk_cent": 9979575
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 71852459,
+   "hk_cent": 33568794
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 56737648,
+   "hk_cent": 26529132
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 44816176,
+   "hk_cent": 20886742
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 30577034,
+   "hk_cent": 14237326
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 118805574,
+   "hk_cent": 52766830
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 97760945,
+   "hk_cent": 43503755
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 75050632,
+   "hk_cent": 33381178
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 51655013,
+   "hk_cent": 22961635
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 68408892,
+   "hk_cent": 28887957
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 54110463,
+   "hk_cent": 22847871
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 42395179,
+   "hk_cent": 17902324
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 29276015,
+   "hk_cent": 12362879
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 86548472,
+   "hk_cent": 40351464
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 68444964,
+   "hk_cent": 31992580
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 53996425,
+   "hk_cent": 25141378
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 37016057,
+   "hk_cent": 17309802
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 89765694,
+   "hk_cent": 39891604
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 72956637,
+   "hk_cent": 32428407
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 56404570,
+   "hk_cent": 25063246
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 38919725,
+   "hk_cent": 17300227
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 50913325,
+   "hk_cent": 21502021
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 40608178,
+   "hk_cent": 17146600
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 31573191,
+   "hk_cent": 13331802
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 21744406,
+   "hk_cent": 9181978
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 65042228,
+   "hk_cent": 30393522
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 50622241,
+   "hk_cent": 23669864
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 40609156,
+   "hk_cent": 18937414
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 27497914,
+   "hk_cent": 12851476
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 90536665,
+   "hk_cent": 40245681
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 73851344,
+   "hk_cent": 32832930
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 57061323,
+   "hk_cent": 25364021
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 39338524,
+   "hk_cent": 17497254
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 52686547,
+   "hk_cent": 22249186
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 42107710,
+   "hk_cent": 17786209
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 33241225,
+   "hk_cent": 14035174
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 22456826,
+   "hk_cent": 9483698
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 66374769,
+   "hk_cent": 30976036
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 52992259,
+   "hk_cent": 24749228
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 41051750,
+   "hk_cent": 19139200
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 28126112,
+   "hk_cent": 13104660
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 108697300,
+   "hk_cent": 48331368
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 88385560,
+   "hk_cent": 39254836
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 69377811,
+   "hk_cent": 30833161
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 47647870,
+   "hk_cent": 21172218
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 61577342,
+   "hk_cent": 26003075
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 50330821,
+   "hk_cent": 21259330
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 38934897,
+   "hk_cent": 16443228
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 26630954,
+   "hk_cent": 11247380
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 78886365,
+   "hk_cent": 36936334
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 62786425,
+   "hk_cent": 29472160
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 49698982,
+   "hk_cent": 23125422
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 33698984,
+   "hk_cent": 15741202
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 81161286,
+   "hk_cent": 36097664
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 65856096,
+   "hk_cent": 29271230
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 52045257,
+   "hk_cent": 23139625
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 35255236,
+   "hk_cent": 15670716
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 48164047,
+   "hk_cent": 20341789
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 37797972,
+   "hk_cent": 15963528
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 29561064,
+   "hk_cent": 12485658
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 20133948,
+   "hk_cent": 8503347
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 59417004,
+   "hk_cent": 27831222
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 47129083,
+   "hk_cent": 22063192
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 37634736,
+   "hk_cent": 17549660
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 25313500,
+   "hk_cent": 11823510
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 106222580,
+   "hk_cent": 47225356
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 83902513,
+   "hk_cent": 37303615
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 66265376,
+   "hk_cent": 29443508
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 44982788,
+   "hk_cent": 20003388
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 58824240,
+   "hk_cent": 24839007
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 46690191,
+   "hk_cent": 19716453
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 37020836,
+   "hk_cent": 15631340
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 25078566,
+   "hk_cent": 10589679
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 74555611,
+   "hk_cent": 34815678
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 58450912,
+   "hk_cent": 27374348
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 46381910,
+   "hk_cent": 21615836
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 31876260,
+   "hk_cent": 14861720
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 123821643,
+   "hk_cent": 55041677
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 101082776,
+   "hk_cent": 44927668
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 79257654,
+   "hk_cent": 35235316
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 53634788,
+   "hk_cent": 23838258
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 71712125,
+   "hk_cent": 30287123
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 56430458,
+   "hk_cent": 23829158
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 44072723,
+   "hk_cent": 18613322
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 29906101,
+   "hk_cent": 12629377
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 88932768,
+   "hk_cent": 41421310
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 72090411,
+   "hk_cent": 33692530
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 56295054,
+   "hk_cent": 26327346
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 37468169,
+   "hk_cent": 17465900
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 94619953,
+   "hk_cent": 42072219
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 74098815,
+   "hk_cent": 32938581
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 58546155,
+   "hk_cent": 26034101
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 39119606,
+   "hk_cent": 17387794
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 52738418,
+   "hk_cent": 22271075
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 42220040,
+   "hk_cent": 17830946
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 33299771,
+   "hk_cent": 14060888
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 23025051,
+   "hk_cent": 9723549
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 66936338,
+   "hk_cent": 31371994
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 54191544,
+   "hk_cent": 25352682
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 41294462,
+   "hk_cent": 19299106
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 28368824,
+   "hk_cent": 13264566
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 102458447,
+   "hk_cent": 45573559
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 81170661,
+   "hk_cent": 36075043
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 64234091,
+   "hk_cent": 28550182
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 44136547,
+   "hk_cent": 19620445
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 56929350,
+   "hk_cent": 24037608
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 46172378,
+   "hk_cent": 19500144
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 36111930,
+   "hk_cent": 15246544
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 24907142,
+   "hk_cent": 10517852
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 72887890,
+   "hk_cent": 33925886
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 58785435,
+   "hk_cent": 27461488
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 45014687,
+   "hk_cent": 21004897
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 31424427,
+   "hk_cent": 14647819
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 121863309,
+   "hk_cent": 54172565
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 99004792,
+   "hk_cent": 44025270
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 77424323,
+   "hk_cent": 34401876
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 53151173,
+   "hk_cent": 23625314
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 69615612,
+   "hk_cent": 29396538
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 56243024,
+   "hk_cent": 23750782
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 44002160,
+   "hk_cent": 18584082
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 29538831,
+   "hk_cent": 12473940
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 88390348,
+   "hk_cent": 41365892
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 67726909,
+   "hk_cent": 31685883
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 54887869,
+   "hk_cent": 25586367
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 37331751,
+   "hk_cent": 17379528
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 92799919,
+   "hk_cent": 41251617
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 72799937,
+   "hk_cent": 32358954
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 57258487,
+   "hk_cent": 25464335
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 39941429,
+   "hk_cent": 17751181
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 52186957,
+   "hk_cent": 22037650
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 41689486,
+   "hk_cent": 17606532
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 32624194,
+   "hk_cent": 13781236
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 22373026,
+   "hk_cent": 9448622
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 65692760,
+   "hk_cent": 30675151
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 51185426,
+   "hk_cent": 23951243
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 40995170,
+   "hk_cent": 19141482
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 27936618,
+   "hk_cent": 13008793
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 106643809,
+   "hk_cent": 47389164
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 84887731,
+   "hk_cent": 37728698
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 65277992,
+   "hk_cent": 29016522
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 45317034,
+   "hk_cent": 20140444
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 59144964,
+   "hk_cent": 24976144
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 48980660,
+   "hk_cent": 20687446
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 37421687,
+   "hk_cent": 15802628
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 25631532,
+   "hk_cent": 10824194
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 75790333,
+   "hk_cent": 35416618
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 60746413,
+   "hk_cent": 28431246
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 46736640,
+   "hk_cent": 21763923
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 32487843,
+   "hk_cent": 15157087
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 128185255,
+   "hk_cent": 56944266
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 101990157,
+   "hk_cent": 45308195
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 79980419,
+   "hk_cent": 35534557
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 53560929,
+   "hk_cent": 23804826
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 72243426,
+   "hk_cent": 30511652
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 57130826,
+   "hk_cent": 24124450
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 45323104,
+   "hk_cent": 19140138
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 30745647,
+   "hk_cent": 12984160
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 90751326,
+   "hk_cent": 42347356
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 71409840,
+   "hk_cent": 33354177
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 57473238,
+   "hk_cent": 26788318
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 38921997,
+   "hk_cent": 18197090
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 93999917,
+   "hk_cent": 41817469
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 77531640,
+   "hk_cent": 34459437
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 58448729,
+   "hk_cent": 26004821
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 40946306,
+   "hk_cent": 18200936
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 53326957,
+   "hk_cent": 22520572
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 43504589,
+   "hk_cent": 18373332
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 33938313,
+   "hk_cent": 14333406
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 22855925,
+   "hk_cent": 9648600
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 69356179,
+   "hk_cent": 32376615
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 53897624,
+   "hk_cent": 25118073
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 42312245,
+   "hk_cent": 19791237
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 28912229,
+   "hk_cent": 13486842
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 97229184,
+   "hk_cent": 43206735
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 77551152,
+   "hk_cent": 34481876
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 60926776,
+   "hk_cent": 27099453
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 41434110,
+   "hk_cent": 18441911
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 55664983,
+   "hk_cent": 23508826
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 43533344,
+   "hk_cent": 18380152
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 34606589,
+   "hk_cent": 14615330
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 23668612,
+   "hk_cent": 9993962
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 69004959,
+   "hk_cent": 32191249
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 55624455,
+   "hk_cent": 25853684
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 44034198,
+   "hk_cent": 20550263
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 30326865,
+   "hk_cent": 14181476
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 115687705,
+   "hk_cent": 51423303
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 92985285,
+   "hk_cent": 41347227
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 73238960,
+   "hk_cent": 32581392
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 49024348,
+   "hk_cent": 21797026
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 65584396,
+   "hk_cent": 27691178
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 53509373,
+   "hk_cent": 22592760
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 41765560,
+   "hk_cent": 17636744
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 28690040,
+   "hk_cent": 12113926
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 82292780,
+   "hk_cent": 38521010
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 68546422,
+   "hk_cent": 32007834
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 52322013,
+   "hk_cent": 24501485
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 34814675,
+   "hk_cent": 16241966
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 88390167,
+   "hk_cent": 39295524
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 69619451,
+   "hk_cent": 30959932
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 55317025,
+   "hk_cent": 24600922
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 37238992,
+   "hk_cent": 16544354
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 49586003,
+   "hk_cent": 20942046
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 39322649,
+   "hk_cent": 16604570
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 31373930,
+   "hk_cent": 13248542
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 21559356,
+   "hk_cent": 9103242
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 62936659,
+   "hk_cent": 29326857
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 49868351,
+   "hk_cent": 23240998
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 39258583,
+   "hk_cent": 18392211
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 26839056,
+   "hk_cent": 12542450
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 110282831,
+   "hk_cent": 49037942
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 87941387,
+   "hk_cent": 39099427
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 69951159,
+   "hk_cent": 31106274
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 46995081,
+   "hk_cent": 20898491
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 62522458,
+   "hk_cent": 26399468
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 49583073,
+   "hk_cent": 20937190
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 38747540,
+   "hk_cent": 16364570
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 27271513,
+   "hk_cent": 11515880
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 80112289,
+   "hk_cent": 37367840
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 63546416,
+   "hk_cent": 29629295
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 48770789,
+   "hk_cent": 22774655
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 34019552,
+   "hk_cent": 15863430
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 132370617,
+   "hk_cent": 58844750
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 107824297,
+   "hk_cent": 47942335
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 82273099,
+   "hk_cent": 36585286
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 58126779,
+   "hk_cent": 25837017
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 74471694,
+   "hk_cent": 31447268
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 59999098,
+   "hk_cent": 25335162
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 47087984,
+   "hk_cent": 19888422
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 31768564,
+   "hk_cent": 13416340
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 94131819,
+   "hk_cent": 44199062
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 74522039,
+   "hk_cent": 34864422
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 59961046,
+   "hk_cent": 28005880
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 40380535,
+   "hk_cent": 18801969
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 98312110,
+   "hk_cent": 43694539
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 78634078,
+   "hk_cent": 34941387
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 62595067,
+   "hk_cent": 27832134
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 42399963,
+   "hk_cent": 18846788
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 56246405,
+   "hk_cent": 23746854
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 45503610,
+   "hk_cent": 19221114
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 35770990,
+   "hk_cent": 15108034
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 23969092,
+   "hk_cent": 10120778
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 69951302,
+   "hk_cent": 32749298
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 55722017,
+   "hk_cent": 26109292
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 44819565,
+   "hk_cent": 20975629
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 30634182,
+   "hk_cent": 14245868
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 114480000,
+   "hk_cent": 48013000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 92029200,
+   "hk_cent": 38603000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 72981000,
+   "hk_cent": 30608000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 49618600,
+   "hk_cent": 20812000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 64164450,
+   "hk_cent": 25562000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 52089990,
+   "hk_cent": 20755000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 40666370,
+   "hk_cent": 16199000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 27709460,
+   "hk_cent": 11039000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 81620000,
+   "hk_cent": 35878000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 66101600,
+   "hk_cent": 29150000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 52220900,
+   "hk_cent": 22988000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 34296300,
+   "hk_cent": 15184000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 102570000,
+   "hk_cent": 45574000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 82400000,
+   "hk_cent": 36631000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 62780000,
+   "hk_cent": 27925000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 43460000,
+   "hk_cent": 19318000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 73498000,
+   "hk_cent": 31034000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 58690500,
+   "hk_cent": 24786000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 46248000,
+   "hk_cent": 19529000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 31763000,
+   "hk_cent": 13411000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 91640000,
+   "hk_cent": 42760000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 72475000,
+   "hk_cent": 33870000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 58810000,
+   "hk_cent": 27412000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 39280000,
+   "hk_cent": 18294000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 96070000,
+   "hk_cent": 42710000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 76300000,
+   "hk_cent": 33899000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 61110000,
+   "hk_cent": 27162000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 42240000,
+   "hk_cent": 18788000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 55572500,
+   "hk_cent": 23474000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 44184000,
+   "hk_cent": 18662000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 34292000,
+   "hk_cent": 14481000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 23503000,
+   "hk_cent": 9924000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 56235000,
+   "hk_cent": 29154000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 44410000,
+   "hk_cent": 22930000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 35680000,
+   "hk_cent": 18462000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 23815000,
+   "hk_cent": 12306000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 117352600,
+   "hk_cent": 49210000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 94721600,
+   "hk_cent": 39701000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 75302400,
+   "hk_cent": 31559000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 49385400,
+   "hk_cent": 20723000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 77567340,
+   "hk_cent": 31555000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 61504380,
+   "hk_cent": 25025000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 48798860,
+   "hk_cent": 19854000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 33338980,
+   "hk_cent": 13563000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 84535000,
+   "hk_cent": 37156000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 67516700,
+   "hk_cent": 29672000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 53439900,
+   "hk_cent": 23624000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 36172500,
+   "hk_cent": 15938000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 105280000,
+   "hk_cent": 46795000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 84180000,
+   "hk_cent": 37424000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 65110000,
+   "hk_cent": 28955000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 43700000,
+   "hk_cent": 19430000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 89347000,
+   "hk_cent": 38228000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 71470500,
+   "hk_cent": 30595000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 55835000,
+   "hk_cent": 23898000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 37910500,
+   "hk_cent": 16221000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 94050000,
+   "hk_cent": 43876000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 76390000,
+   "hk_cent": 35712000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 61470000,
+   "hk_cent": 28720000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 41755000,
+   "hk_cent": 19438000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 101740000,
+   "hk_cent": 45232000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 79480000,
+   "hk_cent": 35318000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 62130000,
+   "hk_cent": 27626000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 43560000,
+   "hk_cent": 19351000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 66490000,
+   "hk_cent": 28445000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 53461000,
+   "hk_cent": 22871000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 41613500,
+   "hk_cent": 17807000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 28620000,
+   "hk_cent": 12247000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 58330000,
+   "hk_cent": 30142000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 46600000,
+   "hk_cent": 24204000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 36765000,
+   "hk_cent": 19008000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 24705000,
+   "hk_cent": 12798000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K101",
+   "umsatz_cent": 108533400,
+   "hk_cent": 45502000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K102",
+   "umsatz_cent": 87100200,
+   "hk_cent": 36516000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K103",
+   "umsatz_cent": 68507800,
+   "hk_cent": 28731000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K104",
+   "umsatz_cent": 46205400,
+   "hk_cent": 19371000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K101",
+   "umsatz_cent": 71907930,
+   "hk_cent": 29265000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K102",
+   "umsatz_cent": 57560550,
+   "hk_cent": 23419000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K103",
+   "umsatz_cent": 45483790,
+   "hk_cent": 18512000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K104",
+   "umsatz_cent": 30559860,
+   "hk_cent": 12437000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K101",
+   "umsatz_cent": 76023200,
+   "hk_cent": 33534000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K102",
+   "umsatz_cent": 61654900,
+   "hk_cent": 27136000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K103",
+   "umsatz_cent": 48134600,
+   "hk_cent": 21198000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "NORD",
+   "produktgruppe": "STE",
+   "kunden_nr": "K104",
+   "umsatz_cent": 33448300,
+   "hk_cent": 14724000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K201",
+   "umsatz_cent": 95800000,
+   "hk_cent": 42578000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K202",
+   "umsatz_cent": 76230000,
+   "hk_cent": 33886000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K203",
+   "umsatz_cent": 59710000,
+   "hk_cent": 26536000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K204",
+   "umsatz_cent": 41190000,
+   "hk_cent": 18304000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K201",
+   "umsatz_cent": 80136500,
+   "hk_cent": 34303000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K202",
+   "umsatz_cent": 65325500,
+   "hk_cent": 27958000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K203",
+   "umsatz_cent": 50887500,
+   "hk_cent": 21775000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K204",
+   "umsatz_cent": 34599500,
+   "hk_cent": 14808000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K201",
+   "umsatz_cent": 88615000,
+   "hk_cent": 41348000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K202",
+   "umsatz_cent": 71040000,
+   "hk_cent": 33302000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K203",
+   "umsatz_cent": 55055000,
+   "hk_cent": 25668000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "SUED",
+   "produktgruppe": "STE",
+   "kunden_nr": "K204",
+   "umsatz_cent": 37615000,
+   "hk_cent": 17562000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K301",
+   "umsatz_cent": 92880000,
+   "hk_cent": 41289000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K302",
+   "umsatz_cent": 73800000,
+   "hk_cent": 32799000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K303",
+   "umsatz_cent": 57010000,
+   "hk_cent": 25341000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "ANT",
+   "kunden_nr": "K304",
+   "umsatz_cent": 38550000,
+   "hk_cent": 17149000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K301",
+   "umsatz_cent": 61592500,
+   "hk_cent": 26358000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K302",
+   "umsatz_cent": 48548000,
+   "hk_cent": 20778000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K303",
+   "umsatz_cent": 38025000,
+   "hk_cent": 16281000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "SEN",
+   "kunden_nr": "K304",
+   "umsatz_cent": 25730000,
+   "hk_cent": 11012000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K301",
+   "umsatz_cent": 53815000,
+   "hk_cent": 27870000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K302",
+   "umsatz_cent": 43000000,
+   "hk_cent": 22366000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K303",
+   "umsatz_cent": 33770000,
+   "hk_cent": 17514000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "region": "WEST",
+   "produktgruppe": "STE",
+   "kunden_nr": "K304",
+   "umsatz_cent": 23535000,
+   "hk_cent": 12196000
+  }
+ ],
+ "kostenstellen_ist": [
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 106920396
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 74489111
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 113579550
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 25579708
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 36808315
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 125834715
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5074260
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 88151094
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 19870977
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 22537366
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 37750518
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 7759165
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 42239080
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 16930358
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 39684794
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6307210
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 37811592
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14174481
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11270176
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 813119
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 33368040
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 12730946
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4255088
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 113544090
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 79018616
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 120846096
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 25509198
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 36598885
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 127724838
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5216515
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 90506699
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 19698485
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 22577474
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 39177840
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 7939531
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 43992130
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 16886145
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 39646823
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6419933
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 39010452
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14117824
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11343177
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 826758
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 34112694
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 12768368
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4226797
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 104824170
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 72865518
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 111738522
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 25496398
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 36834245
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 120091341
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 4919401
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 83629916
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 19712245
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 22672755
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 36525645
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 7293438
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 39886600
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 16977663
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 39517357
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 5803538
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 35676264
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14150749
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11268345
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 757482
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 31303746
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 12753227
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4248448
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 118004832
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 82798643
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 126199500
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 25493540
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 36489085
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 137365266
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5499392
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 95241663
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 19848289
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 22685840
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 40454739
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 8278252
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 44987410
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 16883616
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 39614098
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6781476
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 40706952
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14178848
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11369598
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 865421
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 35488890
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 12736386
+  },
+  {
+   "geschaeftsjahr": 2024,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4246855
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 116350176
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 79280793
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 123826198
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 26188651
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 37856502
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 136492095
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5372823
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 95090804
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 20476485
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 23269000
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 39669415
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 7842425
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 44025454
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 17436502
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 40764625
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6656528
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 39852320
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14585681
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11692831
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 832117
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 35167230
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 13132874
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4352210
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 120945684
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 80995880
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 130375329
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 26175738
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 37806921
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 136874275
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5420065
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 96399842
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 20346552
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 23308336
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 40768010
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 8103889
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 45667963
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 17455384
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 40922663
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6790388
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 40751700
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14579964
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11655432
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 864754
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 36152592
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 13070567
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4378295
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 109829520
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 74602501
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 120444592
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 26357306
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 37810822
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 125935100
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 4979684
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 87713702
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 20374527
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 23285832
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 38365780
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 7506027
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 42872203
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 17455537
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 40670203
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6261156
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 37718040
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14570171
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11625103
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 511957
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 21333330
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 8738233
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 2913860
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 125525280
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 84608375
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 133507902
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 26202222
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 37856947
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 145054770
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5709060
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 101509576
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 20311479
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 23339138
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 42572595
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 8490496
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 47446377
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 17415121
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 40837445
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 7283924
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 42983840
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 14599681
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 11650756
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 872482
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 37031166
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 13068832
+  },
+  {
+   "geschaeftsjahr": 2025,
+   "quartal": "Q4",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4378783
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 125806380
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 113496448
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 132822000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 26970799
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 39109361
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 166688500
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5608056
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 99409800
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 20957223
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 23961732
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 29800800
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 5930112
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 32992000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 18017959
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 41972506
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6968000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 42052800
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 15006051
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 12003256
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 890664
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 37020000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 13474855
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q1",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4497703
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 127368780
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 115890528
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 136210500
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 27093154
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 39016216
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 170109000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5806800
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 101501400
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 20995561
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 23985427
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 30945600
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 6139536
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 34256000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 17880197
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 42000708
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 7280400
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 44011200
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 15006473
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 12002421
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 910560
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 38240000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 13472783
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q2",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4493081
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "400000",
+   "ist_cent": 116267970
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "410000",
+   "ist_cent": 107174304
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "430000",
+   "ist_cent": 125046000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "435000",
+   "ist_cent": 27231654
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4100",
+   "kostenart": "480000",
+   "ist_cent": 39012627
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "400000",
+   "ist_cent": 158122500
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "410000",
+   "ist_cent": 5364744
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "430000",
+   "ist_cent": 94731000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "435000",
+   "ist_cent": 20921571
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4200",
+   "kostenart": "480000",
+   "ist_cent": 23999854
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "400000",
+   "ist_cent": 28357200
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "410000",
+   "ist_cent": 5620800
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "430000",
+   "ist_cent": 31180000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "435000",
+   "ist_cent": 18011146
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4300",
+   "kostenart": "480000",
+   "ist_cent": 41813890
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "400000",
+   "ist_cent": 6724800
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "430000",
+   "ist_cent": 40377600
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "435000",
+   "ist_cent": 15047204
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "470000",
+   "ist_cent": 12031449
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4400",
+   "kostenart": "481000",
+   "ist_cent": 24000000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "410000",
+   "ist_cent": 846336
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "430000",
+   "ist_cent": 34785000
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "435000",
+   "ist_cent": 13493354
+  },
+  {
+   "geschaeftsjahr": 2026,
+   "quartal": "Q3",
+   "kostenstelle": "4500",
+   "kostenart": "480000",
+   "ist_cent": 4517167
+  }
+ ],
+ "plan_2026": {
+  "umsatz": [
+   {
+    "quartal": "Q1",
+    "produktgruppe": "ANT",
+    "umsatz_cent": 957720000,
+    "hk_cent": 425761000
+   },
+   {
+    "quartal": "Q1",
+    "produktgruppe": "SEN",
+    "umsatz_cent": 543212000,
+    "hk_cent": 229397000
+   },
+   {
+    "quartal": "Q1",
+    "produktgruppe": "STE",
+    "umsatz_cent": 681705000,
+    "hk_cent": 318430000
+   },
+   {
+    "quartal": "Q2",
+    "produktgruppe": "ANT",
+    "umsatz_cent": 986890000,
+    "hk_cent": 438726000
+   },
+   {
+    "quartal": "Q2",
+    "produktgruppe": "SEN",
+    "umsatz_cent": 559761000,
+    "hk_cent": 236386000
+   },
+   {
+    "quartal": "Q2",
+    "produktgruppe": "STE",
+    "umsatz_cent": 702185000,
+    "hk_cent": 327938000
+   },
+   {
+    "quartal": "Q3",
+    "produktgruppe": "ANT",
+    "umsatz_cent": 910420000,
+    "hk_cent": 404699000
+   },
+   {
+    "quartal": "Q3",
+    "produktgruppe": "SEN",
+    "umsatz_cent": 515728500,
+    "hk_cent": 217791000
+   },
+   {
+    "quartal": "Q3",
+    "produktgruppe": "STE",
+    "umsatz_cent": 648270000,
+    "hk_cent": 302676000
+   }
+  ],
+  "kosten": [
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4100",
+    "kostenart": "400000",
+    "plan_cent": 124320000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4100",
+    "kostenart": "410000",
+    "plan_cent": 85248000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4100",
+    "kostenart": "430000",
+    "plan_cent": 133200000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4100",
+    "kostenart": "435000",
+    "plan_cent": 27000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4100",
+    "kostenart": "480000",
+    "plan_cent": 39000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4200",
+    "kostenart": "400000",
+    "plan_cent": 142080000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4200",
+    "kostenart": "410000",
+    "plan_cent": 5683200
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4200",
+    "kostenart": "430000",
+    "plan_cent": 99456000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4200",
+    "kostenart": "435000",
+    "plan_cent": 21000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4200",
+    "kostenart": "480000",
+    "plan_cent": 24000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4300",
+    "kostenart": "400000",
+    "plan_cent": 42624000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4300",
+    "kostenart": "410000",
+    "plan_cent": 8524800
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4300",
+    "kostenart": "430000",
+    "plan_cent": 47360000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4300",
+    "kostenart": "435000",
+    "plan_cent": 18000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4300",
+    "kostenart": "480000",
+    "plan_cent": 42000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4400",
+    "kostenart": "400000",
+    "plan_cent": 7104000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4400",
+    "kostenart": "430000",
+    "plan_cent": 42624000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4400",
+    "kostenart": "435000",
+    "plan_cent": 15000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4400",
+    "kostenart": "470000",
+    "plan_cent": 12000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4500",
+    "kostenart": "410000",
+    "plan_cent": 888000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4500",
+    "kostenart": "430000",
+    "plan_cent": 37000000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4500",
+    "kostenart": "435000",
+    "plan_cent": 13500000
+   },
+   {
+    "quartal": "Q1",
+    "kostenstelle": "4500",
+    "kostenart": "480000",
+    "plan_cent": 4500000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4100",
+    "kostenart": "400000",
+    "plan_cent": 128100000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4100",
+    "kostenart": "410000",
+    "plan_cent": 87840000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4100",
+    "kostenart": "430000",
+    "plan_cent": 137250000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4100",
+    "kostenart": "435000",
+    "plan_cent": 27000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4100",
+    "kostenart": "480000",
+    "plan_cent": 39000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4200",
+    "kostenart": "400000",
+    "plan_cent": 146400000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4200",
+    "kostenart": "410000",
+    "plan_cent": 5856000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4200",
+    "kostenart": "430000",
+    "plan_cent": 102480000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4200",
+    "kostenart": "435000",
+    "plan_cent": 21000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4200",
+    "kostenart": "480000",
+    "plan_cent": 24000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4300",
+    "kostenart": "400000",
+    "plan_cent": 43920000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4300",
+    "kostenart": "410000",
+    "plan_cent": 8784000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4300",
+    "kostenart": "430000",
+    "plan_cent": 48800000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4300",
+    "kostenart": "435000",
+    "plan_cent": 18000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4300",
+    "kostenart": "480000",
+    "plan_cent": 42000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4400",
+    "kostenart": "400000",
+    "plan_cent": 7320000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4400",
+    "kostenart": "430000",
+    "plan_cent": 43920000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4400",
+    "kostenart": "435000",
+    "plan_cent": 15000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4400",
+    "kostenart": "470000",
+    "plan_cent": 12000000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4500",
+    "kostenart": "410000",
+    "plan_cent": 915000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4500",
+    "kostenart": "430000",
+    "plan_cent": 38125000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4500",
+    "kostenart": "435000",
+    "plan_cent": 13500000
+   },
+   {
+    "quartal": "Q2",
+    "kostenstelle": "4500",
+    "kostenart": "480000",
+    "plan_cent": 4500000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4100",
+    "kostenart": "400000",
+    "plan_cent": 118020000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4100",
+    "kostenart": "410000",
+    "plan_cent": 80928000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4100",
+    "kostenart": "430000",
+    "plan_cent": 126450000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4100",
+    "kostenart": "435000",
+    "plan_cent": 27000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4100",
+    "kostenart": "480000",
+    "plan_cent": 39000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4200",
+    "kostenart": "400000",
+    "plan_cent": 134880000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4200",
+    "kostenart": "410000",
+    "plan_cent": 5395200
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4200",
+    "kostenart": "430000",
+    "plan_cent": 94416000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4200",
+    "kostenart": "435000",
+    "plan_cent": 21000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4200",
+    "kostenart": "480000",
+    "plan_cent": 24000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4300",
+    "kostenart": "400000",
+    "plan_cent": 40464000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4300",
+    "kostenart": "410000",
+    "plan_cent": 8092800
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4300",
+    "kostenart": "430000",
+    "plan_cent": 44960000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4300",
+    "kostenart": "435000",
+    "plan_cent": 18000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4300",
+    "kostenart": "480000",
+    "plan_cent": 42000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4400",
+    "kostenart": "400000",
+    "plan_cent": 6744000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4400",
+    "kostenart": "430000",
+    "plan_cent": 40464000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4400",
+    "kostenart": "435000",
+    "plan_cent": 15000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4400",
+    "kostenart": "470000",
+    "plan_cent": 12000000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4500",
+    "kostenart": "410000",
+    "plan_cent": 843000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4500",
+    "kostenart": "430000",
+    "plan_cent": 35125000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4500",
+    "kostenart": "435000",
+    "plan_cent": 13500000
+   },
+   {
+    "quartal": "Q3",
+    "kostenstelle": "4500",
+    "kostenart": "480000",
+    "plan_cent": 4500000
+   }
+  ]
+ },
+ "summen": {
+  "2024": {
+   "umsatz_cent": 7935084479,
+   "hk_cent": 3539594118,
+   "db_i_cent": 4395490361,
+   "kostenstellen_cent": 3600815031,
+   "ebit_cent": 794675330,
+   "je_kostenstelle_cent": {
+    "4100": 1473638418,
+    "4200": 1058858531,
+    "4300": 582425202,
+    "4400": 280390615,
+    "4500": 205502265
+   }
+  },
+  "2025": {
+   "umsatz_cent": 8387306996,
+   "hk_cent": 3741107445,
+   "db_i_cent": 4646199551,
+   "kostenstellen_cent": 3774155395,
+   "ebit_cent": 872044156,
+   "je_kostenstelle_cent": {
+    "4100": 1556547339,
+    "4200": 1121263145,
+    "4300": 606288114,
+    "4400": 293257515,
+    "4500": 196799282
+   }
+  },
+  "2026": {
+   "umsatz_cent": 6456211460,
+   "hk_cent": 2848534000,
+   "db_i_cent": 3607677460,
+   "kostenstellen_cent": 3044751500,
+   "ebit_cent": 562925960,
+   "je_kostenstelle_cent": {
+    "4100": 1298516721,
+    "4200": 942163168,
+    "4300": 384918454,
+    "4400": 252511654,
+    "4500": 166641503
+   }
+  }
+ },
+ "senx1_erster_verkauf": "2026-04-04"
+}
