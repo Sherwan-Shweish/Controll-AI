@@ -71,7 +71,7 @@ def verlauf(daten: pd.DataFrame, jahr: int, wert: str = "umsatz_eur"):
     d["Anzeige"] = d["T€"].map(lambda w: de(w, 1) + " T€")
     d["Beschriftung"] = d["T€"].map(lambda w: de(w, 1))
     basis = alt.Chart(d).encode(
-        x=alt.X("quartal:N", title=None),
+        x=alt.X("quartal:N", title=None, axis=alt.Axis(labelAngle=0)),
         xOffset="Serie:N",
         y=alt.Y("T€:Q", scale=alt.Scale(zero=True), axis=alt.Axis(labels=False)),
         color=alt.Color(

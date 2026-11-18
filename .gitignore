@@ -19,3 +19,7 @@ dist/
 data/sample/
 exports/
 .DS_Store
+
+# --- Interne Abnahme- und Bauprotokolle sowie persönliche Lernunterlagen: nicht Teil des Repositorys ---
+docs/intern/
+docs/privat/

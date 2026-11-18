@@ -1,192 +1,316 @@
-# Σ ControllAI · 2.2.1
+# ControllAI
 
-**Profitabilität · Strategie · Prozessportfolio**
+**Profitabilität, Strategie und Prozesse für das Controlling – Deckungsbeitragsrechnung, ABC-Analyse, Order-to-Cash und Balanced Scorecard**
 
-Welche Kunden, Produkte und Prozesse tragen den Erfolg – und wohin steuern wir?
+**Live-Demo:** <https://controll-ai-shweish.streamlit.app> · **Stack:** Python, SQL (SQLite), Streamlit, Excel, PowerPoint und Power BI (DAX)
 
-Die Qualitätskorrektur und Order-to-Cash sind abgeschlossen. Alle Unternehmensdaten sind synthetisch;
-keine Veröffentlichung. ControllAI verbindet Profitabilität, Strategie und O2C auf derselben Belegbasis.
+[![Tests](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
+![Offline](https://img.shields.io/badge/Demo-ohne%20API--Key-0A66C2)
+![macOS](https://img.shields.io/badge/macOS-Desktop--App-555555?logo=apple)
+![Lizenz](https://img.shields.io/badge/Lizenz-MIT-lightgrey)
 
-![Cockpit dunkel](docs/screenshots/01_cockpit_dunkel.png)
-![Cockpit hell](docs/screenshots/02_cockpit_hell.png)
+> *Welche Kunden, Produkte und Prozesse tragen den Erfolg – und wohin steuern wir?*
 
-## Start im Browser oder auf dem Mac
+**Kurzfassung:** ControllAI analysiert die Profitabilität eines fiktiven Industrieunternehmens: mehrstufige
+Deckungsbeitragsrechnung (DB I–III) nach Kunde, Region und Produkt, ABC-/Pareto-Analyse, Order-to-Cash mit DSO und
+eine Balanced Scorecard.
+
+Fragen in deutscher Sprache werden in geprüfte SQL-Abfragen übersetzt; Ergebnisse gehen als Excel-, PowerPoint- und
+Power-BI-Paket hinaus. Alle Zahlen berechnet Python; die KI formuliert nur, und jede Zahl wird automatisch geprüft.
+Portfolio-Projekt mit synthetischen Daten.
+
+![Cockpit](docs/screenshots/01_cockpit.png)
+
+---
+
+## Inhalt
+
+1. [Einblick](#einblick)
+2. [Business Value](#business-value)
+3. [Funktionsumfang](#funktionsumfang)
+4. [Fachliche Methodik](#fachliche-methodik)
+5. [KI-Analyst und Sicherheit](#ki-analyst-und-sicherheit)
+6. [Freigabe und Export](#freigabe-und-export)
+7. [Einordnung im Portfolio](#einordnung-im-portfolio)
+8. [Installation & Schnellstart](#installation--schnellstart)
+9. [Konfiguration](#konfiguration)
+10. [Projektstruktur](#projektstruktur)
+11. [Tests](#tests)
+12. [Glossar Deutsch–Englisch](#glossar-deutschenglisch)
+13. [Hinweise](#hinweise)
+
+---
+
+## Einblick
+
+**Portfolio** – Deckungsbeiträge nach Kunde, Region und Produktgruppe, ABC-Analyse und Was-wäre-wenn-Simulation:
+
+![Portfolio](docs/screenshots/02_portfolio.png)
+
+**Prozesse** – Order-to-Cash: Durchlaufzeit, Engpass, Nacharbeit und offene Forderungen nach Kunde:
+
+![Prozesse](docs/screenshots/03_prozesse.png)
+
+**Scorecard** – Balanced Scorecard mit Ziel, Trend und Ampel; darunter die Textanalyse von Geschäftsberichten:
+
+![Scorecard](docs/screenshots/04_scorecard.png)
+
+**KI-Analyst** – Frage auf Deutsch, geprüfte lesende SQL-Abfrage, Ergebnis und Faktenprüfung:
+
+![KI-Analyst](docs/screenshots/05_ki_analyst.png)
+
+**Bericht** – Kommentar aus geprüften Kennzahlen mit namentlicher Freigabe:
+
+![Bericht](docs/screenshots/06_bericht.png)
+
+**Agent & Audit** – Rollen und Regeln, der Weg von der Kennzahl zum Bericht, Sicherheitstests und Audit-Protokoll:
+
+![Agent & Audit](docs/screenshots/07_agent_audit.png)
+
+Darstellung hell (Umschalter oben rechts, lokal und in der Mac-App):
+
+![Cockpit hell](docs/screenshots/08_cockpit_hell.png)
+
+---
+
+## Business Value
+
+| Aufgabe im Controlling | Ohne Werkzeug | Mit ControllAI |
+|---|---|---|
+| Kunden- und Produktergebnis | Excel-Auswertungen je Anfrage, Fixkosten oft pauschal verteilt | DB I–III je Kunde, Region und Produktgruppe, Verteilung centgenau und nachvollziehbar |
+| Schwerpunkte erkennen | Listen sortieren, Bauchgefühl | ABC-/Pareto-Analyse mit Kunden mit negativem Deckungsbeitrag auf einen Blick |
+| Entscheidungen vorbereiten | Szenarien einzeln nachrechnen | Simulation von Preis, Menge, Material- und Fixkosten mit EBIT-Brücke |
+| Forderungen und Prozesse | DSO als Einzelzahl aus der Buchhaltung | Order-to-Cash-Analyse: Engpass, Nacharbeit und offene Forderungen je Kunde |
+| Ad-hoc-Fragen der Fachbereiche | Warten auf eine BI-Auswertung | Frage auf Deutsch, Antwort aus einer geprüften, rein lesenden SQL-Abfrage |
+| Management-Bericht | Zahlen von Hand übertragen | Kommentar aus benannten Kennzahlen, namentliche Freigabe, Export als PowerPoint, PDF, Excel und Power BI |
+
+---
+
+## Funktionsumfang
+
+| Seite | Was sie leistet |
+|---|---|
+| **Cockpit** | Fünf Kennzahlen mit Vorjahresvergleich im gleichen Zeitraum, Kernaussagen, Umsatz je Quartal, DB II nach Produktgruppe |
+| **Portfolio** | DB I–III nach Kunde, Region und Produktgruppe mit Filter, ABC-/Pareto-Analyse, Was-wäre-wenn-Simulation |
+| **Prozesse** | Order-to-Cash aus dem Event-Log: Durchlaufzeit, Engpass, Varianten, offene Forderungen, BPMN-Verbesserungsvorschläge |
+| **Scorecard** | Balanced Scorecard mit fünf Kennzahlen in vier Perspektiven; Textanalyse von Geschäftsberichten mit Belegzitat |
+| **KI-Analyst** | Text-to-SQL: deutsche Frage, geprüfte lesende Abfrage, Ergebnis, Faktenprüfung der Antwort |
+| **Bericht** | Kommentar aus geprüften Kennzahlen, namentliche Freigabe, Export als PowerPoint, PDF und Excel mit Formeln |
+| **Agent & Audit** | Arbeitsweise des Agenten, Weg von der Kennzahl zum Bericht, Sicherheitstests, Audit-Protokoll |
+
+Dazu: Betrieb im Browser und als Mac-App im eigenen Fenster, vollständiger Demo-Modus ohne API-Key, Darstellung hell
+und dunkel, Power-BI-Paket im Sternschema mit DAX-Kennzahlen.
+
+Die **Textanalyse von Geschäftsberichten** überträgt die Methodik meiner Bachelorarbeit (Klassifikation von
+487 Digitalisierungsprojekten aus 120 Geschäftsberichten der DAX-40-Unternehmen nach den Perspektiven der Balanced
+Scorecard) in ein Werkzeug: Die KI schlägt eine Perspektive mit Belegzitat vor, das Zitat wird im Originaltext geprüft,
+und der Mensch entscheidet. Die Beispieltexte in der App sind frei erfunden.
+
+---
+
+## Fachliche Methodik
+
+- **Deckungsbeitragsstufen:** DB I = Umsatz − variable Herstellkosten. DB II = DB I − Erzeugnisfixkosten (Fertigung
+  4100–4300 und Qualitätssicherung 4500). DB III = DB II − Unternehmensfixkosten (Instandhaltung 4400).
+  Summe DB III = EBIT = Umsatz − Herstellkosten − alle Kostenstellenkosten. Die Verteilung erfolgt auf den Cent genau
+  vor jedem Filter und bleibt additiv.
+- **Verteilungsschlüssel:** Fertigung nach Herstellkosten; Qualitätssicherung nach einem Servicegewicht je Kunde;
+  Instandhaltung nach positivem Umsatz. Diese Schlüssel sind Annahmen der Demo, kein Nachweis einer Verursachung.
+- **ABC-Analyse:** nach positivem DB II; A bis 80 %, B bis 95 %, Rest C. Negative Beiträge zählen zu C.
+- **Simulation:** Reihenfolge Preis → Menge → Materialkosten → Fixkosten; Materialanteil 70 % als Demo-Annahme.
+  Die Brückensumme entspricht der EBIT-Differenz auf den Cent. Kein Nachfrage- oder Kapazitätsmodell.
+- **DSO:** Netto-Forderungen am Stichtag / Nettoumsatz der letzten 90 Tage × 90. Faktura, Zahlung und offene Posten
+  stammen aus derselben Belegbasis; Event-Log und Kennzahl stimmen auf den Cent überein.
+- **Order-to-Cash:** Auftrag → Lieferung → Faktura → Zahlung mit Varianten wie Teillieferung, Gutschrift, Mahnung und
+  Nacharbeit. Ein Fall ist eine Fakturaposition. Offene Fälle sind noch nicht abgeschlossen; beobachtete Dauern sind
+  deshalb keine vollständigen Zahlungszyklen. Rangfolgen beweisen keine Kausalität.
+- **Offene Forderungen** bezeichnen hier Netto-Debitoren, nicht das gesamte Working Capital mit Vorräten und
+  Verbindlichkeiten.
+- **Balanced Scorecard:** fünf Kennzahlen, vier gleichgewichtete Perspektiven. Grün ab 100 % Zielerreichung, Gelb ab
+  90 %, sonst Rot. Fehlt eine Messung, gibt es keinen Gesamtwert. Das Ziel der DB-II-Marge stammt aus dem Plan 2026;
+  die übrigen Ziele sind gesetzte Demo-Ziele.
+
+**Daten:** RheinMain Industrietechnik GmbH, fiktiv. Geschäftsjahre 2024 und 2025 vollständig, 2026 bis 30.09.2026;
+der Vorjahresvergleich nutzt denselben Zeitraum. 2026 YTD: Umsatz 64,56 Mio. €, DB II 8,15 Mio. €, EBIT 5,63 Mio. €,
+DSO 46,4 Tage, 3.244 Order-to-Cash-Fälle. Die Werte eines frischen Demo-Laufs stehen in
+[demolauf.json](docs/demolauf.json).
+
+---
+
+## KI-Analyst und Sicherheit
+
+Die KI rechnet nicht. Sie übersetzt Fragen in SQL und formuliert Antworten; beides wird geprüft.
+
+- **SQL-Schutz in vier Schichten:** Parser (genau eine Anweisung, nur `SELECT`/`WITH`), Freigabeliste für Tabellen,
+  Spalten und Funktionen, rein lesende Datenbankverbindung, Zeilen- und Zeitlimit je Abfrage.
+- **Faktenprüfung:** Jede Zahl einer KI-Antwort muss im Abfrageergebnis oder in den Kennzahlen belegt sein; sonst
+  wird der Text verworfen. Die Prüfung belegt Zahlen, nicht Ursachen.
+- **Texte aus Daten sind keine Anweisungen:** Bekannte Injection-Zeilen in Berichtstexten werden vor dem Modellaufruf
+  entfernt; dynamische Texte werden maskiert dargestellt. Das ist keine Erkennung aller denkbaren Angriffe.
+- **Sicherheitstests per Knopfdruck** auf der Seite *Agent & Audit*: ein Löschversuch per SQL und eine versteckte
+  Anweisung im Datentext. Beide werden blockiert und protokolliert.
+
+---
+
+## Freigabe und Export
+
+Kennzahlen, Szenario und Freigabe gehören zusammen: Nur geprüfte, namentlich freigegebene Kommentare gelangen in den
+Management-Bericht. Ändern sich Daten oder Szenario, wird die alte Freigabe ungültig. Die Namenseingabe dokumentiert
+Verantwortung; sie ersetzt keine Anmeldung oder elektronische Signatur. Szenarien, Freigaben und Audit-Protokoll
+gelten für die Sitzung.
+
+- **PowerPoint und PDF:** Management-Bericht mit den freigegebenen Kommentaren.
+- **Excel:** Formeln, gespeicherte Rechenwerte und ein Vergleich mit den Python-Ergebnissen.
+- **Power BI:** Sternschema aus Fakten- und Dimensionstabellen mit DAX-Kennzahlen; CSV mit Semikolon, Dezimalkomma
+  und UTF-8-BOM.
+
+---
+
+## Einordnung im Portfolio
+
+ControllAI und VarianceAI bilden zusammen eine kleine Controlling-Suite: dasselbe fiktive Unternehmen und ein
+gemeinsames Zahlenwerk (Buchungskreis 1000, Stichtag 30.09.2026).
+
+| Projekt | Ebene | Kernfrage | Schwerpunkte |
+|---|---|---|---|
+| **VarianceAI** | Operatives Controlling & Reporting | Warum weicht das Ergebnis vom Plan ab – und wo landen wir am Jahresende? | Preis-/Mengen-/Mix-Analyse, Plankostenrechnung, Forecast, IBCS-Bericht |
+| **ControllAI** | Profitabilität, Strategie & BI | Welche Kunden, Produkte und Prozesse tragen den Erfolg? | Deckungsbeitragsrechnung DB I–III, ABC/Pareto, Order-to-Cash mit DSO, Balanced Scorecard, Text-to-SQL |
+
+Umsatz, Herstellkosten, Kostenstellenkosten und EBIT stimmen in beiden Projekten centgenau überein; das wird in den
+Tests gegen feste Referenzwerte geprüft.
+
+---
+
+## Installation & Schnellstart
+
+Voraussetzung: [uv](https://docs.astral.sh/uv/). Python 3.12 wird von uv bereitgestellt; getestet mit 3.11 bis 3.13.
 
 ```bash
 uv sync --locked
-uv run python run_agent.py diagnose
 uv run streamlit run app.py
 ```
 
-Offline (Mock) ist ohne API-Schlüssel vollständig nutzbar. Entwicklungsvorgabe: Python 3.12;
-getestete Zielversionen: 3.11 und 3.13. Eine Zielversion lässt sich mit `uv sync --locked --python 3.11` wählen;
-bei nachfolgenden `uv run`-Befehlen dieselbe `--python`-Option verwenden.
+Der Demo-Modus ist ohne API-Schlüssel vollständig nutzbar. Die synthetischen Daten werden beim ersten Start erzeugt.
 
-Lokaler Browser mit gespeicherter Darstellung:
+Lokaler Browser mit Umschalter hell/dunkel und gespeicherter Darstellung:
 
 ```bash
 AGENT_LAUFZEIT=lokal uv run streamlit run app.py
 ```
 
-Mac-Starter (Projektordner danach nicht verschieben):
+Mac-App im eigenen Fenster (Projektordner danach nicht verschieben):
 
 ```bash
-uv run python -m desktop.build_app
+uv run python -m desktop.launcher     # direkt starten
+uv run python -m desktop.build_app    # ~/Applications/ControllAI.app anlegen
 ```
 
-Die App wird lokal in `~/Applications/ControllAI.app` angelegt. Der Starter öffnet einen lokalen Server
-auf 127.0.0.1 und beendet ihn beim Schließen. Im Webbetrieb ist das Thema fest dunkel; lokal und im
-Desktopbetrieb gibt es den gespeicherten Hell/Dunkel-Umschalter. Schriften werden lokal mitgeliefert.
+Der Starter öffnet einen lokalen Server auf 127.0.0.1 und beendet ihn beim Schließen. Schriften werden lokal
+mitgeliefert. In der Online-Demo ist das Thema fest dunkel.
 
-## Daten und Suite-Abgrenzung
+---
 
-RheinMain Industrietechnik GmbH, fiktiv. Geschäftsjahre 2024/2025 vollständig, **2026 YTD bis 30.09.2026**.
-Standard ist 2026; PY bedeutet ebenfalls Januar–September 2025. Ab 2.2.0 sind Umsatz, Herstellkosten (DB I),
-Kostenstellenkosten, EBIT und der Plan 2026 centgenau mit VarianceAI 1.2 (Seed 42) abgestimmt; SENX1 startet wie
-dort am 04.04.2026. Ab 2.2.1 stimmen Umsatz und HK auch je Kunde mit VarianceAI überein (Zelle Quartal × Region ×
-Produktgruppe × Kunde). Einzelbelege, Zahlungen und O2C sind ControllAI-eigen.
-
-| Kennzahl 2025 | VarianceAI | ControllAI 2.1 | ControllAI 2.2.1 |
-|---|---:|---:|---:|
-| Umsatz | 83,87 Mio. € | 83,87 Mio. € | 83,87 Mio. € |
-| DB-I-Marge | 55,40 % | 37,41 % | 55,40 % |
-| EBIT | 8,72 Mio. € (10,40 %) | 14,07 Mio. € (16,77 %) | 8,72 Mio. € (10,40 %) |
-| Umsatz K201 | 11,36 Mio. € | 10,06 Mio. € | 11,36 Mio. € |
-
-Kette der Suite: DataGuard-AI → FlowAudit-AI → VarianceAI → ControllAI.
-
-| Agent | Verantwortung |
-|---|---|
-| DataGuard-AI | Stammdatenqualität (Kreditoren/Debitoren), Dubletten, Golden Record, S/4HANA-Readiness (CVI) |
-| VarianceAI | Monatsabschluss, Plan-Ist, Preis/Menge/Mix, Forecast |
-| FlowAudit-AI | E-Rechnung, Einzelbeleg-P2P, Matching, Klärfälle, Skonto |
-| ControllAI | Profitabilität, Jahres-/YTD-Portfolio, Strategie, O2C, OP/DSO und Liefertreue |
-
-Referenzwerte und Entscheidungen: [Suite-Abstimmung](docs/Suite-Abstimmung.md),
-[Änderungsprotokoll](docs/Aenderungsprotokoll.md). Die beiden Referenzagenten wurden nicht verändert.
-
-## Sieben Seiten
-
-| Seite | Inhalt |
-|---|---|
-| Cockpit | Kennzahlen, periodenreiner AC/PY-Vergleich, Datenqualität, Faktenentwurf |
-| Portfolio | DB I–III nach Kunde/Region/Produkt, ABC/Pareto und Was-wäre-wenn-Simulation |
-| Prozesse | O2C-Portfolio, OP-/DSO-Treiber, Engpässe, Varianten und faktengeprüfte BPMN-Vorschläge |
-| Scorecard | Vier Perspektiven, Ziele/Trend; BSC-Textanalyse als Unterbereich |
-| KI-Analyst | Deutsche Frage, geprüfte lesende SQL-Abfrage, Ergebnis und Zahlenprüfung |
-| Bericht | Faktenkommentar, namentliche Freigabe, PowerPoint/PDF/Excel auf Knopfdruck |
-| Agent & Audit | Sieben Agentenkarten, Berichtstrichter, Ausschlussgründe und getrennte Sicherheitstests |
-
-Beträge in Diagrammen stehen in T€ mit einer Nachkommastelle; Tabellen verwenden deutsche Bezeichnungen
-und Dezimalkomma. Kunden und Materialien erscheinen mit Namen und ergänzender Nummer.
-
-## Fachliche Definitionen
-
-- DB I = Umsatz − variable Herstellkosten (VarianceAI-Konto 700000). DB II = DB I − Erzeugnisfixkosten
-  (Fertigung 4100–4300 und Qualitätssicherung 4500). DB III = DB II − Unternehmensfixkosten (Instandhaltung 4400).
-  Summe DB III = EBIT = Umsatz − HK − alle Kostenstellenkosten, identisch mit VarianceAI.
-  Cent-Allokation erfolgt vor Filtern und bleibt additiv.
-- Schlüssel: Fertigung nach Herstellkosten; Qualitätssicherung auf Produktkategorien nach Herstellkosten, auf
-  Kunden nach Demo-Servicegewicht 12 (Kunden-Endziffer 4) bzw. 1; Instandhaltung nach positivem Umsatz.
-  Diese Schlüssel sind Annahmen, kein Nachweis einer Verursachung. Ergebnis je Quartal/Produktkategorie in der
-  Tabelle `produktfixkosten`.
-- ABC verwendet positive DB-II-Beiträge; negative Beiträge sind C. Top-Fünftel wird auf volle Kunden aufgerundet.
-- Simulation: Preis → Menge → Materialkosten → Fixkosten; Materialanteil 70 % als Demo-Annahme.
-  Brückensumme = EBIT SIM − EBIT AC auf den Cent. Kein Nachfrage- oder Kapazitätsmodell.
-- DSO = Netto-OP am gewählten Stichtag / Nettoumsatz der letzten 90 Tage × 90. Faktura, Zahlung und OP
-  stammen aus derselben bereinigten Fakturaposition; Event-Log und Kennzahl stimmen auf den Cent überein.
-- O2C: Auftrag → Lieferung → Faktura → Zahlung; feste Varianten aus Seed 42: Teillieferung, Gutschrift,
-  Mahnung, Liefer-/Zahlungsverzug und Nacharbeit. Ein Fall ist eine Fakturaposition. Die Demo verwendet
-  30 Tage Zahlungsziel und Zahlung nach 30 + 10 × Kunden-Endziffer Tagen. Keine Teilzahlungen, Steuer oder Bankabstimmung.
-- Prozessanalyse zeigt den gesamten beobachteten Zeitraum. Offene Fälle sind rechtszensiert; beobachtete
-  Dauern sind keine abgeschlossenen Zahlungszyklen. OP-Treiber verwenden dagegen den gewählten Jahresstichtag.
-  Additive DSO-Beiträge je Kunde/Variante teilen denselben 90-Tage-Umsatznenner. Rangfolgen beweisen keine Kausalität.
-- Gebundenes Kapital bezeichnet hier Netto-Debitoren-OP, nicht das gesamte Working Capital einschließlich Vorräten
-  und Verbindlichkeiten. Gutschriften bleiben negativ. OP-Snapshots niemals über Stichtage aufsummieren.
-- BSC: fünf Kennzahlen, vier gleichgewichtete Perspektiven. Kunden mittelt DSO und Liefertreue;
-  Prozesse misst Nacharbeit in abgeschlossenen O2C-Fällen. Kennzahlen werden vor Perspektivaggregation auf
-  0–100 % begrenzt. Grün ab 100 %, gelb ab 90 %, sonst rot. Fehlende Messung verhindert den Gesamtwert.
-  Ziel DB-II-Marge 13,4 % = geplante Marge laut VarianceAI-Plan 2026; übrige Ziele sind Demo-Ziele.
-  P2P verbleibt bei FlowAudit-AI; doppelte Makroanalyse entfällt.
-
-Aktuelle Werte stammen aus [demolauf.json](docs/demolauf.json), Stand Seed 42 / September 2026.
-2026 YTD: Umsatz 64.562.114,60 €, DB I 36.076.774,60 €, DB II 8.154.376,14 €, EBIT 5.629.259,60 € – wie VarianceAI.
-DSO 46,42 Tage; Netto-OP 10.398.886,94 €; 3244 O2C-Fälle.
-Die festen Suite-Referenzen (Umsatz, HK, Kostenstellen, EBIT) werden unabhängig vom Generator in Tests geprüft.
-`tools/suite_referenz_erzeugen.py` erzeugt die Referenz aus VarianceAI, `tools/demolauf_erzeugen.py` den Nachweis.
-
-## Freigaben, Sicherheit und Exporte
-
-Fakten, Szenario und Freigaben bilden einen versionsgebundenen Kontext. Nur aktuell geprüfte, namentlich
-freigegebene Kommentare gelangen in Management-Exporte. Änderungen machen alte Freigaben ungültig.
-Namenseingabe dokumentiert Verantwortung, ersetzt aber keine Anmeldung oder elektronische Signatur.
-Szenarien, Freigaben und Audit gelten für die Sitzung.
-
-Der Audit-Trichter zählt dieselben aktuellen Kennzahlobjekte über alle Stufen; er zählt nicht Kunden oder
-Transaktionszeilen. Demo-Wesentlichkeit: Geldbeträge ab 1.000 €, übrige gemessene Kennzahlen vollständig.
-„Im Bericht“ zählt freigegebene Kommentar-Fakten im zuletzt vorbereiteten, noch aktuellen Export.
-Ausschlussgründe werden je Kennzahl einmal gezählt, mit Vorrang für Schwelle und veralteten Datenstand.
-
-SQL-Schutz: Parser, Tabellen-/Spalten-/Funktionsfreigaben, SQLite-Authorizer, Read-only-Verbindung,
-Zeilen- und Zeitlimit. Unbelegte Zahlen in Modellantworten werden verworfen. Die numerische Prüfung
-beweist keine Ursache oder allgemeine semantische Richtigkeit eines Textes.
-
-Datentexte sind unvertrauenswürdig. Bekannte Injection-Anweisungszeilen werden vor dem BSC-Modellaufruf
-quarantänisiert. Ein reiner Angriffstext erzeugt keine Initiative. Das ist keine universelle Erkennung
-aller denkbaren Angriffe. Dynamische Texte werden als maskiertes HTML dargestellt.
-
-Excel enthält Formeln, gespeicherte Rechenwerte, separate Python-Vergleiche und bedingte Statusformatierung.
-Power BI liefert getrennte Ergebnis-/OP-/BSC-Fakten, Dimensionen und DAX. CSV: UTF-8-BOM, Semikolon,
-Dezimalkomma und deutsche Stichtage. Technische Schlüssel bleiben im maschinenlesbaren Sternschema erhalten.
-OP-Snapshots nicht über mehrere Stichtage summieren; DSO/BSC-DAX fordert eine einzelne Periode.
-
-## Konfiguration und Datenordner
+## Konfiguration
 
 | Variable | Zweck |
 |---|---|
-| LLM_ANBIETER | mock, claude oder gemini; ohne Zugang bleibt Mock nutzbar |
-| ANTHROPIC_API_KEY / GEMINI_API_KEY | Optionaler Anbieterzugang |
-| LLM_MODEL | Modellkennung überschreiben |
-| AGENT_LAUFZEIT | web, lokal oder desktop |
-| AGENT_DATENORDNER | Basisordner für Daten und Einstellungen |
-| DB_PATH | Eigene bestehende SQLite-Datenbank mit freigegebenem Schema |
-| SQL_MAX_ROWS / SQL_TIMEOUT_SECONDS | Abfragelimits |
-| SCHEMA_SAMPLE_ROWS | Beispielzeilen für das Modell; bei Unternehmensdaten auf 0 setzen |
+| `LLM_ANBIETER` | `mock`, `claude` oder `gemini`; ohne Zugang bleibt der Demo-Modus nutzbar |
+| `ANTHROPIC_API_KEY` / `GEMINI_API_KEY` | Optionaler Anbieterzugang |
+| `LLM_MODEL` | Modellkennung überschreiben |
+| `AGENT_LAUFZEIT` | `web`, `lokal` oder `desktop` |
+| `AGENT_DATENORDNER` | Basisordner für Daten und Einstellungen |
+| `DB_PATH` | Eigene SQLite-Datenbank mit freigegebenem Schema |
+| `SQL_MAX_ROWS` / `SQL_TIMEOUT_SECONDS` | Abfragelimits |
+| `SCHEMA_SAMPLE_ROWS` | Beispielzeilen für das Modell; bei Unternehmensdaten auf 0 setzen |
 
-Schlüsselvorrang: Umgebung > .env > lokaler macOS-Schlüsselbund. Keine Schlüsselwerte im Audit.
-Die Abnahme verwendete ausschließlich Mock, keine kostenpflichtigen Modellaufrufe.
+Schlüssel werden in dieser Reihenfolge gelesen: Umgebung, `.env`, macOS-Schlüsselbund. Im Audit-Protokoll stehen
+keine Schlüsselwerte. Vorlage: [.env.example](.env.example).
 
-Standard lokal: `~/Library/Application Support/ControllAI/daten-v2.2/`.
-Web-Demo: temporärer Ordner `ControllAI-demo-v2.2/daten-v2.2/`.
-Vorherige Demo-Daten werden nicht überschrieben. Ein expliziter DB_PATH gewinnt und wird nicht automatisch migriert.
-Er benötigt das zugehörige `sample/event_log_o2c.csv` mit derselben Belegbasis.
-Produktive Daten benötigen einen geprüften Import, Schemafreigaben und eigene Integrationsentscheidungen.
+---
 
-## Aufbau und Prüfnachweise
+## Projektstruktur
 
-app.py enthält Aufbau und Verdrahtung; Seiten liegen in ui_seiten, ui_strategie und ui_audit,
-Datenzugriff/Cache in ui_daten und zwischenspeicher, Kennzahlen-Leiste in ui_kopf.
-Bestehende englische Agentenkern-APIs bleiben für Integrationskompatibilität stabil.
+```text
+ControllAI/
+├── app.py                 Aufbau und Verdrahtung der sieben Seiten
+├── run_agent.py           Kommandozeile: Diagnose und Demo-Lauf
+├── src/
+│   ├── agent.py           KI-Agent: Text-to-SQL, Faktenprüfung, Textklassifikation
+│   ├── sql_pruefung.py    SQL-Schutz: Parser, Freigabelisten, Authorizer
+│   ├── kostenstufen.py    Deckungsbeitragsstufen und Kostenverteilung auf den Cent
+│   ├── strategie.py       Verdichtung, ABC-Analyse, Balanced Scorecard
+│   ├── simulation.py      Was-wäre-wenn-Simulation
+│   ├── o2c.py             Order-to-Cash, offene Forderungen, DSO
+│   ├── analytics.py       Datenbereinigung, Ausreißer, Prozessanalyse
+│   ├── kommentare.py      Faktenkommentar und namentliche Freigabe
+│   ├── bericht_export.py  PowerPoint, PDF, Excel, Power BI
+│   ├── audit.py           Audit-Protokoll mit Hash-Kette
+│   ├── seed_data.py       Synthetische Daten (Seed 42)
+│   └── ui_*.py            Oberfläche: Designsystem, Diagramme, Seiten
+├── desktop/               Mac-App: eigenes Fenster über pywebview
+├── tests/                 437 Tests
+├── tools/                 Nachweis- und Referenzdaten erzeugen
+├── docs/                  Standard, Quellen, Demo-Nachweis, Screenshots
+└── .github/workflows/     Automatische Prüfung bei jedem Push
+```
+
+---
+
+## Tests
 
 ```bash
 uv run pytest -q
 uv run ruff check .
-uv run ruff check . --select E501
 ```
 
-**436 Tests je Zielversion bestanden**, ohne übersprungene Tests: Python 3.11.18 in 67,21 s, Python 3.13.18 in 66,41 s (Cloud-Container). Erstlauf 5,566 s, Folgelauf 0,355 s, Jahreswechsel 0,278 s (lokaler Offline-AppTest).
+**437 Tests**, vollständig offline und ohne API-Key. Bei jedem Push laufen ruff und pytest automatisch über GitHub
+Actions auf Python 3.11 und 3.13. Geprüft werden unter anderem:
 
-Aktuelle Messungen: [Endabnahme](docs/Endabnahme.md), [Prüfergebnisse](docs/pruefergebnisse.json),
-[Desktop-Referenzvergleich](docs/referenzvergleich.json). Historische Schritt-1-Abnahme bleibt als Verlauf erhalten.
-Desktop einschließlich Ressourcen ist außer app.toml bytegleich mit VarianceAI.
-Der vorhandene Ruff-Regelsatz bleibt unverändert; E501 wird zusätzlich separat geprüft.
+- **Rechenlogik:** Deckungsbeitragsstufen, Kostenverteilung ohne Cent-Differenz, ABC-Analyse, Simulation, DSO
+- **Abstimmung mit VarianceAI:** Umsatz, Herstellkosten, Kostenstellen und EBIT gegen feste Referenzwerte
+- **SQL-Schutz:** schreibende Anweisungen, Kommentare, mehrere Anweisungen und nicht freigegebene Spalten werden abgelehnt
+- **Faktenprüfung:** unbelegte Zahlen in KI-Texten, Zitate, deutsche Zahlenformate
+- **Oberfläche:** jede Seite, Geschäftsjahreswechsel, Freigabe, Export und Sicherheitstests über `streamlit.testing`
+- **Export:** PowerPoint, PDF, Excel mit Formeln, Power-BI-Paket
 
-Die Word-Dokumente **SAP-Anbindung.docx** und **Kennzahlen_und_Diagramme.docx** wurden für 2.2 neu erstellt
-und aus dem aktuellen Demo-Lauf befüllt. Arabische Fassungen werden separat geliefert und gehören nicht ins Repository.
-Nur **Leitfaden_Unternehmenseinsatz.docx** ist ein unveränderter historischer Leitfaden 2.0; für aktuelle
-Zahlen und O2C gelten die neuen Dokumente. Alle 34 Seiten der vier Erklärdokumente wurden als PDF gerendert und geprüft.
+---
 
-![O2C](docs/screenshots/06_o2c_hell.png)
-![Scorecard](docs/screenshots/07_scorecard_hell.png)
+## Glossar Deutsch–Englisch
 
-Lizenz MIT; lokale Schriftdateien mit SIL-OFL-Lizenzen.
+Die Oberfläche ist deutsch; die englischen Fachbegriffe stehen als Zweitbeschriftung an Seiten, Kennzahlen und Karten.
+
+| Deutsch | Englisch |
+|---|---|
+| Deckungsbeitrag (DB I, II, III) | Contribution Margin (CM I, II, III) |
+| Deckungsbeitragsrechnung | Contribution Margin Accounting |
+| Umsatz · Herstellkosten · Fixkosten | Revenue · Cost of Goods Sold · Fixed Costs |
+| ABC-Analyse | Pareto / ABC Analysis |
+| Was-wäre-wenn-Simulation | What-if Simulation |
+| Auftrag bis Zahlungseingang | Order-to-Cash (O2C) |
+| Offene Forderungen | Open Receivables |
+| Forderungslaufzeit | Days Sales Outstanding (DSO) |
+| Durchlaufzeit · Engpass · Nacharbeit | Throughput Time · Bottleneck · Rework |
+| Balanced Scorecard, Zielerreichung | Balanced Scorecard, Target Achievement |
+| Management-Bericht · Freigabe | Management Report · Approval |
+| Audit-Protokoll | Audit Log |
+
+---
+
+## Hinweise
+
+- ControllAI ist ein **Portfolio- und Demonstrationsprojekt** mit synthetischen Daten. Es ersetzt weder das
+  Rechnungswesen noch die fachliche Prüfung durch qualifizierte Controller.
+- KI-generierte Texte sind Entwürfe und müssen vor der Verwendung fachlich geprüft und freigegeben werden.
+- Für echte Unternehmensdaten wären ein geprüfter Import, Schemafreigaben und eigene Integrationsentscheidungen nötig.
+- Es werden keine Secrets im Repository gespeichert; API-Keys gehören ausschließlich in die lokale `.env`.
+- Entwickelt mit KI-Unterstützung nach festen Arbeitsregeln ([docs/STANDARD.md](docs/STANDARD.md)).
+
+---
+
+## Lizenz & Autor
+
+MIT-Lizenz – siehe [LICENSE](LICENSE). Lokale Schriftdateien stehen unter der SIL Open Font License.
+
+**Sherwan Shweish** · B.Sc. Digital Business Management, Hochschule RheinMain
+Fokus: Controlling, Datenanalyse und Reporting · Python, SQL, Excel, Power BI, BPMN/eEPK, SAP S/4HANA

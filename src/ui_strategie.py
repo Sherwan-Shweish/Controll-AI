@@ -31,11 +31,7 @@ def anzahl_kunden(n: int) -> str:
 
 
 def profitabilitaet(daten: pd.DataFrame):
-    st.html(ui.leitfrage("Welche Kunden, Regionen und Produkte tragen den Ergebnisbeitrag?"))
-    st.caption(
-        "DB I = Umsatz − variable Herstellkosten · DB II = DB I − Erzeugnisfixkosten (Fertigung 4100–4300, "
-        "QS 4500) · DB III = DB II − Unternehmensfixkosten (Instandhaltung 4400). Summe DB III = EBIT in VarianceAI."
-    )
+    st.html(ui.leitfrage("Welche Kunden, Regionen und Produkte tragen den Ergebnisbeitrag?", "Profitability"))
     cols = st.columns(3)
     region = cols[0].selectbox(
         "Region",
@@ -59,7 +55,8 @@ def profitabilitaet(daten: pd.DataFrame):
     if d.empty:
         st.info("Für diese Kombination sind keine Daten vorhanden.")
         return
-    dimension = st.radio("Verdichtung", ["Kunde", "Region", "Produktgruppe"], horizontal=True)
+    dimension = st.radio("Ansicht nach", ["Kunde", "Region", "Produktgruppe"], horizontal=True)
+    abschnitt(f"DB II nach {dimension}", "Contribution Margin II")
     feld = {"Kunde": "kunden_nr", "Region": "region", "Produktgruppe": "produktgruppe"}[dimension]
     t = verdichte(d, [feld]).sort_values("db_ii_cent", ascending=False)
     t["Objekt"] = t[feld].map(lambda v: {**NAMEN, **GRUPPEN, **REGIONEN}.get(v, v))
@@ -72,13 +69,18 @@ def profitabilitaet(daten: pd.DataFrame):
         hide_index=True,
         width="stretch",
     )
-    st.caption(
-        "Allokation erfolgt vor dem Drill-down. Ein Filter verteilt die Kosten nicht neu. "
-        "Schlüssel: Fertigung nach variablen Herstellkosten; Qualitätssicherung nach Demo-Servicegewicht "
-        "(Kunden-Endziffer 4 → 12, sonst 1); Instandhaltung nach positivem Umsatz. "
-        "Diese Schlüssel sind Annahmen, keine nachgewiesenen Verursachungsbeziehungen."
-    )
-    abschnitt("Pareto und ABC · ausgewähltes Portfolio")
+    with st.expander("So wird gerechnet: Deckungsbeitragsstufen und Kostenverteilung"):
+        st.caption(
+            "DB I = Umsatz − variable Herstellkosten · DB II = DB I − Erzeugnisfixkosten (Fertigung, "
+            "Qualitätssicherung) · DB III = DB II − Unternehmensfixkosten (Instandhaltung). Summe DB III = EBIT."
+        )
+        st.caption(
+            "Allokation erfolgt vor dem Drill-down. Ein Filter verteilt die Kosten nicht neu. "
+            "Schlüssel: Fertigung nach variablen Herstellkosten; Qualitätssicherung nach Demo-Servicegewicht "
+            "(Kunden-Endziffer 4 → 12, sonst 1); Instandhaltung nach positivem Umsatz. "
+            "Diese Schlüssel sind Annahmen, keine nachgewiesenen Verursachungsbeziehungen."
+        )
+    abschnitt("ABC-Analyse der Kunden", "Pareto / ABC Analysis")
     abc, f = abc_analyse(d)
     if f["db_anteil_pct"] is not None:
         st.write(
@@ -95,12 +97,7 @@ def profitabilitaet(daten: pd.DataFrame):
     else:
         st.info("Netto-DB II ist nicht positiv; ein Pareto-Anteil am Nettoergebnis wäre nicht aussagekräftig.")
     diagramm(dia.pareto(abc))
-    st.caption(
-        "Auf volle Kunden aufgerundet: exakt 20 % sind bei kleinen Portfolios oft unmöglich. "
-        "ABC nutzt nur positive DB-II-Beiträge; A bis zur überschreitenden "
-        "80-%-Position, B bis 95 %, Rest C. "
-        "Negative Beiträge sind C. Der Anteil am Netto-DB kann über 100 % liegen."
-    )
+    st.caption("ABC nach positivem DB II: A bis 80 %, B bis 95 %, Rest C. Negative Beiträge zählen zu C.")
     tabelle_anzeigen(
         abc[["kunden_nr", "db_ii_eur", "anteil_pct", "kumuliert_pct", "abc", "status"]],
         hide_index=True,
@@ -111,11 +108,8 @@ def profitabilitaet(daten: pd.DataFrame):
 
 
 def simulation(daten: pd.DataFrame, jahr: int, audit) -> dict:
-    abschnitt("Simulation · Preis, Menge und Kosten")
-    st.caption(
-        "Jahresportfolio ohne Drill-down-Filter. Konstanter Kunden-/Produktmix; keine Elastizität. "
-        "Materialanteil der variablen Kosten: 70 % als Demo-Annahme."
-    )
+    abschnitt("Simulation: Was wäre, wenn?", "What-if Simulation")
+    st.caption("Wirkung von Preis, Menge und Kosten auf das EBIT des Geschäftsjahres.")
     cols = st.columns(4)
     werte = [
         cols[i].slider(label, -50, 50, 0, key=key)
@@ -138,11 +132,14 @@ def simulation(daten: pd.DataFrame, jahr: int, audit) -> dict:
         strict=True,
     ):
         c.html(ui.karte(ui.statistik([(de(ergebnis[feld] / 100000, 1) + " T€", label, "neutral")])))
-    st.caption(
-        "Reihenfolge: Preis → Menge → Materialkosten → Fixkosten. Preis-Mengen-Interaktion liegt im Mengeneffekt. "
-        + "Variable Kosten skalieren mit der Menge, Fixkosten nur mit ihrem Regler. "
-        "Jeder Schritt wird auf Cent gerundet."
-    )
+    with st.expander("Annahmen der Simulation"):
+        st.caption(
+            "Jahresportfolio ohne Drill-down-Filter. Konstanter Kunden-/Produktmix; keine Elastizität. "
+            "Materialanteil der variablen Kosten: 70 % als Demo-Annahme. "
+            "Reihenfolge: Preis → Menge → Materialkosten → Fixkosten. Preis-Mengen-Interaktion liegt im Mengeneffekt. "
+            "Variable Kosten skalieren mit der Menge, Fixkosten nur mit ihrem Regler. "
+            "Jeder Schritt wird auf Cent gerundet."
+        )
     name = st.text_input("Szenarioname", value="Strategievariante", max_chars=80)
     basis_hash = fingerprint({"jahr": int(jahr), "daten": daten.to_dict("records")})
     gespeichert = st.session_state.setdefault("szenarien", {})
@@ -160,7 +157,7 @@ def simulation(daten: pd.DataFrame, jahr: int, audit) -> dict:
             st.success("Szenario in dieser Sitzung gespeichert.")
     passende = [s for s in gespeichert.values() if s["jahr"] == jahr and s["basis_hash"] == basis_hash]
     if passende:
-        abschnitt("Szenarien vergleichen · gleicher Datenstand")
+        abschnitt("Gespeicherte Szenarien", "Saved Scenarios")
         tabelle_anzeigen(
             pd.DataFrame(
                 [
@@ -178,49 +175,47 @@ def simulation(daten: pd.DataFrame, jahr: int, audit) -> dict:
             hide_index=True,
             width="stretch",
         )
-    st.caption("Szenarien und Freigaben gelten für die Sitzung. Für dauerhafte Ablage Bericht und Audit exportieren.")
+    st.caption("Szenarien gelten für diese Sitzung.")
     return ergebnis
 
 
 def balanced_scorecard(daten: pd.DataFrame, jahr: int):
-    st.html(ui.leitfrage("Erreichen wir unsere strategischen Ziele in allen vier Perspektiven?"))
+    st.html(ui.leitfrage("Erreichen wir unsere strategischen Ziele in allen vier Perspektiven?", "Balanced Scorecard"))
     stand, gesamt = scorecard_stand(daten, jahr)
-    st.caption(
-        f"Stand {'Q3' if jahr == 2026 else 'Q4'} · Trend zum Vorquartal. Prozessquote: "
-        "bis zum Stichtag abgeschlossene YTD-Fälle. DB-II-Ziel = geplante Marge laut VarianceAI-Plan 2026 "
-        "(Quartalswert); übrige Ziele sind gesetzte Demo-Ziele."
-    )
+    st.caption(f"Stand {'Q3' if jahr == 2026 else 'Q4'} · Trend zum Vorquartal")
+    zeilen = []
     for r in stand.itertuples():
         ton = {"grün": "gut", "gelb": "warnung", "rot": "schlecht"}.get(r.ampel, "neutral")
         delta = (
             "nicht gemessen" if pd.isna(r.trend) else de(r.trend, 2) + (" Pp" if r.einheit == "%" else " " + r.einheit)
         )
-        st.html(
-            ui.karte(
-                ui.statistik(
-                    [
-                        (de(r.ist, 2) + " " + r.einheit if pd.notna(r.ist) else "nicht gemessen", r.kennzahl, ton),
-                        (de(r.ziel, 1) + " " + r.einheit, "Ziel", "neutral"),
-                        (delta, "Trend zum Vorquartal", "neutral"),
-                    ]
-                )
-                + ui.pill(r.ampel, ton),
-                r.perspektive,
-            )
+        zeilen.append(
+            [
+                (f"{r.perspektive} · {r.kennzahl}", None),
+                (de(r.ist, 2) + " " + r.einheit if pd.notna(r.ist) else "nicht gemessen", None),
+                (de(r.ziel, 1) + " " + r.einheit, None),
+                (delta, None),
+                (r.ampel, ton if ton in {"gut", "schlecht"} else None),
+            ]
         )
-    st.write("BSC-Zielerreichung: " + (de(gesamt, 1) + " %" if pd.notna(gesamt) else "nicht vollständig messbar"))
-    st.caption(
-        "Je Perspektive: Ist/Ziel bzw. Ziel/Ist bei niedriger-ist-besser. Kunden = Mittel aus DSO und Liefertreue. "
-        "Gesamt = Mittel der vier Perspektiven, "
-        + "je Perspektive auf 100 % begrenzt. Grün ≥100 %, Gelb ≥90 %, sonst Rot. "
-        "Fehlende Perspektive → kein Gesamtwert."
+    st.html(
+        ui.karte(
+            ui.tabelle(["Perspektive · Kennzahl", "Ist", "Ziel", "Trend", "Ampel"], zeilen),
+            "Zielerreichung gesamt: " + (de(gesamt, 1) + " %" if pd.notna(gesamt) else "nicht vollständig messbar"),
+            "Target Achievement",
+        )
     )
-    st.html(dia.strategiekette())
-    st.caption(
-        "Wirkungshypothese: Lernen unterstützt Prozessqualität, diese Kundenziele und finanzielle Ergebnisse. "
-        + "Die Pfeile belegen keine statistische Kausalität. DSO ist Zahlungsbindung, kein Zufriedenheitsmaß."
-    )
-    tabelle_anzeigen(daten[daten.geschaeftsjahr == jahr], hide_index=True, width="stretch")
+    st.html(dia.strategiekette().replace("<img ", '<img style="max-width:100%;height:auto" ', 1))
+    st.caption("Wirkungshypothese zwischen den Perspektiven; die Pfeile belegen keine statistische Kausalität.")
+    with st.expander("So wird gerechnet und alle Kennzahlen je Quartal"):
+        st.caption(
+            "Je Perspektive: Ist/Ziel bzw. Ziel/Ist bei niedriger-ist-besser. Kunden = Mittel aus DSO und Liefertreue. "
+            "Gesamt = Mittel der vier Perspektiven, je Perspektive auf 100 % begrenzt. "
+            "Grün ≥100 %, Gelb ≥90 %, sonst Rot. Fehlende Perspektive → kein Gesamtwert. "
+            "Prozessquote: bis zum Stichtag abgeschlossene YTD-Fälle. DB-II-Ziel = geplante Marge laut Plan 2026 "
+            "(Quartalswert); übrige Ziele sind gesetzte Demo-Ziele. DSO ist Zahlungsbindung, kein Zufriedenheitsmaß."
+        )
+        tabelle_anzeigen(daten[daten.geschaeftsjahr == jahr], hide_index=True, width="stretch")
 
 
 def berichtsfakten(daten: pd.DataFrame, jahr: int, dso: float, bsc: float, sz: dict) -> tuple[dict, dict]:
@@ -248,12 +243,10 @@ def berichtsfakten(daten: pd.DataFrame, jahr: int, dso: float, bsc: float, sz: d
 
 
 def management(fakten: dict, kontext: dict, audit):
-    st.html(ui.leitfrage("Welche Aussagen sind belegt und namentlich für das Management freigegeben?"))
-    st.caption(
-        "Faktensätze werden aus benannten Kennzahlen aufgebaut und vor Freigabe sowie Export erneut geprüft. "
-        + "Qualitative Empfehlungen prüft die freigebende Person; die Zahlenprüfung "
-        "bestätigt keine Ursache oder Prognose."
+    st.html(
+        ui.leitfrage("Welche Aussagen sind belegt und namentlich für das Management freigegeben?", "Management Report")
     )
+    st.caption("Jede Zahl im Kommentar stammt aus einer benannten Kennzahl und wird vor Freigabe und Export geprüft.")
     auswahl = [k for k, f in fakten.items() if wesentlich(f)]
     ids = st.multiselect(
         "Fakten für den Kommentar",

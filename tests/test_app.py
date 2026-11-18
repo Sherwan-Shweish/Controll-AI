@@ -35,7 +35,17 @@ def test_app_startet_im_demo_modus(app):
         assert label in html(app)
     assert html(app).count('class="va-kpi-label"') == 5
     assert "Pp" in html(app) and "data:image/svg+xml;base64," in html(app)
-    assert any("Demo-Modus" in e.value for e in app.info)
+    assert "Demo-Modus" in html(app)
+
+
+def test_zweisprachige_beschriftung(app):
+    """Deutsch ist Hauptsprache; englische Fachbegriffe stehen als Zweitbeschriftung dabei."""
+    seite = html(app)
+    for name in ("Management Cockpit", "Profitability", "Balanced Scorecard", "Management Report"):
+        assert f">{name}</span>" in seite
+    assert '<div class="va-kpi-label">Umsatz · Mio. €</div><span class="va-en">Revenue</span>' in seite
+    assert "Profitability &amp; Business Intelligence" in seite
+    assert "FlowAudit" not in seite and "DataGuard" not in seite
 
 
 def test_jeder_tab_nennt_seine_leitfrage(app):
@@ -52,7 +62,7 @@ def test_engpass_wird_hervorgehoben(app):
     app.session_state["haupttabs"] = "Prozesse"
     app.run()
     assert any("Engpass: Faktura buchen → Mahnung" in e.value for e in app.error)
-    assert any("Einkaufsrechnungen und P2P → FlowAudit-AI" in c.value for c in app.caption)
+    assert any("Order-to-Cash: vom Auftrag bis zum Zahlungseingang" in c.value for c in app.caption)
 
 
 def test_executive_summary_und_bpmn(app):
@@ -122,7 +132,7 @@ def test_anbieter_immer_sichtbar_und_rueckfall(app, monkeypatch, anbieter):
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     auswahl = app.selectbox(key="ki_anbieter")
-    assert auswahl.options == ["Offline (Mock)", "Anthropic Claude", "Google Gemini"]
+    assert auswahl.options == ["Demo ohne KI-Schlüssel", "Anthropic Claude", "Google Gemini"]
     auswahl.select(anbieter).run()
     assert app.warning and any("Offline-Modus arbeitet weiter" in w.value for w in app.warning)
     assert any("mock:deterministisch" in c.value for c in app.caption)

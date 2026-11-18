@@ -1,6 +1,6 @@
 [project]
 name = "controllai"
-version = "2.2.1"
+version = "2.3.0"
 description = "Enterprise-BI-Copilot für Profitabilität, Strategie und Prozesse"
 readme = "README.md"
 requires-python = ">=3.11"

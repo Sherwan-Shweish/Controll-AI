@@ -43,6 +43,9 @@ TITEL = {
     "material_pct": "Materialkosten (%)",
     "fix_pct": "Fixkosten (%)",
     "niedriger_ist_besser": "Niedriger ist besser",
+    "abc": "ABC-Klasse",
+    "anteil_pct": "Anteil (%)",
+    "kumuliert_pct": "Kumuliert (%)",
 }
 
 
@@ -83,8 +86,10 @@ def tabelle_anzeigen(daten, **kwargs):
     return st.dataframe(anzeige, **kwargs)
 
 
-def abschnitt(titel):
-    st.html(f'<div class="va"><h3 style="font-size:1.1rem;margin:1.2rem 0 .6rem">{ui.e(titel)}</h3></div>')
+def abschnitt(titel, en=""):
+    """Abschnittstitel; der englische Fachbegriff steht klein daneben."""
+    zusatz = f'<span class="va-en" style="margin-left:10px">{ui.e(en)}</span>' if en else ""
+    st.html(f'<div class="va"><h3 style="font-size:1.1rem;margin:1.2rem 0 .6rem">{ui.e(titel)}{zusatz}</h3></div>')
 
 
 def kennzahl(bereich, titel, wert):

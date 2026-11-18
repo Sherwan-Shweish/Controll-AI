@@ -312,6 +312,10 @@ h1, h2, h3 {{ letter-spacing: -.01em; }}
   border-radius: 14px; padding: 12px 14px;
   display: flex; flex-direction: column; min-width: 0; }}
 .va-kpi--hervor {{ border-color: {rgba(f["akzent"], 0.45)}; box-shadow: inset 0 0 0 1px {rgba(f["akzent"], 0.12)}; }}
+.va-kpi-kopf {{ min-height: 2.25rem; }}
+.va-en {{ font-size: .68rem; color: var(--va-leise); opacity: .75; letter-spacing: .02em; white-space: nowrap;
+  font-weight: 500; }}
+.va-kpi-kopf .va-en {{ display: block; overflow: hidden; text-overflow: ellipsis; }}
 .va-kpi-label {{ font-size: .8rem; color: var(--va-leise); font-weight: 600; letter-spacing: .02em; }}
 .va-kpi-wert {{ font-size: clamp(1.1rem, 1.55vw, 1.45rem); font-weight: 650; letter-spacing: -.015em; margin-top: 4px;
   white-space: nowrap; }}
@@ -521,6 +525,7 @@ class Kpi:
     verlauf: Sequence[float] = ()
     vergleich: Sequence[float] = ()
     hervorheben: bool = False
+    en: str = ""  # englischer Fachbegriff als Zweitbeschriftung (Deutsch bleibt Hauptsprache)
 
 
 def kpi_leiste(kpis: Iterable[Kpi]) -> str:
@@ -533,7 +538,9 @@ def kpi_leiste(kpis: Iterable[Kpi]) -> str:
         )
         karten.append(
             f'<div class="va-kpi{" va-kpi--hervor" if k.hervorheben else ""}">'
-            f'<div class="va-kpi-label">{e(k.label)}</div>'
+            f'<div class="va-kpi-kopf"><div class="va-kpi-label">{e(k.label)}</div>'
+            + (f'<span class="va-en">{e(k.en)}</span>' if k.en else "")
+            + "</div>"
             f'<div class="va-kpi-spark">{spark}</div>'
             f'<div class="va-kpi-wert">{e(k.wert)}</div>'
             f"<div "
@@ -551,8 +558,9 @@ def kopfzeile(titel: str, untertitel: str, mitte: str, mitte_unter: str, pills: 
     )
 
 
-def leitfrage(frage: str) -> str:
-    return f'<div class="va va-leitfrage">{pill("Leitfrage", "akzent")}<span>{e(frage)}</span></div>'
+def leitfrage(frage: str, seite_en: str = "") -> str:
+    """Kopf einer Seite: englischer Seitenname als Marke, daneben die deutsche Leitfrage."""
+    return f'<div class="va va-leitfrage">{pill(seite_en or "Leitfrage", "akzent")}<span>{e(frage)}</span></div>'
 
 
 def karte(inhalt: str, ueberschrift: str | None = None, rechts: str = "", klasse: str = "") -> str:
@@ -666,7 +674,8 @@ def agentenkarten(karten: Iterable[Agentenkarte]) -> str:
         f'<div class="va-agent{" va-agent--aktiv" if k.aktiv else ""}"><div class="va-agent-kopf">'
         f'<div class="va-stufe-symbol">{symbol(k.symbol, 16)}</div><div><b>{e(k.name)}</b></div>'
         f'{pill(k.status, k.ton)}</div><p>{e(k.aufgabe)}</p><p class="va-regel">{e(k.regel)}</p>'
-        f'<span class="va-mono">{e(k.stand)}</span></div>'
+        + (f'<span class="va-mono">{e(k.stand)}</span>' if k.stand else "")
+        + "</div>"
         for k in karten
     )
     return f'<div class="va-agenten">{teile}</div>'

@@ -148,7 +148,7 @@ def berichtseiten(
         },
         {
             "titel": "Order-to-Cash als Gesamtprozess",
-            "untertitel": "Gesamtprozess · Einkaufsrechnung/P2P → FlowAudit-AI",
+            "untertitel": "Gesamtprozess vom Auftrag bis zum Zahlungseingang",
             "zeilen": [
                 f"Fälle: {de(prozess['anzahl_faelle'])}; Varianten: {de(prozess['anzahl_varianten'])}.",
                 f"Median der beobachteten Falldauer: {de(prozess['durchlaufzeit_tage']['median'], 2)} Tage.",

@@ -62,7 +62,6 @@ def bericht(EVENTLOG_PATH, audit, bsc_stand, bsc_wert, dso_wert, ergebnis_jahr, 
 
 
 def sql(agent, frage_setzen, ki_fehler, leitfrage, pruefstatus):
-    st.caption("Strategische Datenfragen. Monatliche Plan-Ist-Abweichungszerlegung → VarianceAI.")
     leitfrage("sql")
     sicherer_text("**Beispielfragen**")
     kurztitel = {
@@ -85,7 +84,7 @@ def sql(agent, frage_setzen, ki_fehler, leitfrage, pruefstatus):
             width="stretch",
         )
     spalten[len(beispiele) % 3].button(
-        "🛡️ Sicherheitstest: Daten löschen",
+        "Sicherheitstest: Löschversuch",
         key="bsp_angriff",
         on_click=frage_setzen,
         args=(angriff.frage,),
@@ -112,7 +111,7 @@ def sql(agent, frage_setzen, ki_fehler, leitfrage, pruefstatus):
                 st.session_state["sql_ergebnis"] = ("fehler", frage, exc)
     if "sql_ergebnis" in st.session_state:
         art, frage, inhalt = st.session_state["sql_ergebnis"]
-        sicherer_text(f"#### {frage}")
+        sicherer_text(f"**{frage}**")
         if art == "blockiert":
             st.error(f"**Vom SQL-Guard blockiert:** {inhalt}", icon="🛡️")
             if getattr(inhalt, "sql", None):
@@ -163,12 +162,10 @@ def sql(agent, frage_setzen, ki_fehler, leitfrage, pruefstatus):
 
 def bsc(PERSPEKTIVEN, agent, audit, bsc_reihe, diagramm, gj, ki_fehler, modus):
     strategie_ui.balanced_scorecard(bsc_reihe, gj)
-    abschnitt("BSC-Textanalyse · DAX-40-Methodik")
-    sicherer_text(
-        "Digitalisierungsprojekte werden den vier Perspektiven der **Balanced "
-        "Scorecard** zugeordnet – nach der *Zielsetzung*, nicht nach der Technologie. "
-        "Das **Drei-Schichten-Prinzip** hält Originalzitat, KI-Vorschlag und "
-        "menschliche Entscheidung getrennt; der KI-Vorschlag wird nie überschrieben."
+    abschnitt("Textanalyse von Geschäftsberichten", "Report Text Analysis")
+    st.caption(
+        "Die KI ordnet Digitalisierungsprojekte aus Berichtstexten den vier Perspektiven zu – mit Belegzitat. "
+        "Sie schlägt vor, der Mensch entscheidet. Die Beispieltexte sind frei erfunden."
     )
     quelle = st.radio(
         "Textquelle",
@@ -370,14 +367,9 @@ def prozess(
     EVENTLOG_PATH, agent, anbieter, audit, diagramm, kapital_cache, ki_fehler, leitfrage, prozess, pruefstatus, zeige
 ):
     leitfrage("prozess")
-    st.caption("Order-to-Cash · Makro-Sicht auf das gesamte Fallportfolio. Einkaufsrechnungen und P2P → FlowAudit-AI.")
     pa = prozess(str(EVENTLOG_PATH))
     st.session_state["prozess_zaehler"] = len(pa.faelle)
     pf = pa.to_facts()
-
-    st.caption(
-        f"Prozesszeitraum {pf['zeitraum']['von']} bis {pf['zeitraum']['bis']} · unabhängig vom gewählten Finanzjahr."
-    )
     from src.analytics import lade_event_log
     from src.o2c import offene_posten, treiber
 
@@ -385,12 +377,36 @@ def prozess(
     jahr = st.session_state.get("geschaeftsjahr", 2026)
     stichtag = f"{jahr}-09-30" if jahr == 2026 else f"{jahr}-12-31"
     op = int(offene_posten(log, stichtag).op_bewegung_cent.sum())
-    st.write(f"Gebundenes Netto-Debitorenkapital am {pd.Timestamp(stichtag):%d.%m.%Y}: {de(op / 100, 2)} €")
     st.caption(
-        "DSO und offene Posten stammen aus denselben Faktura- und Zahlungsereignissen. "
-        "Offene Fälle sind rechtszensiert; deren letzte Aktivität ist kein Zahlungseingang. "
-        "Durchlaufzeiten unten beschreiben beobachtete Verläufe, keine abgeschlossene O2C-Dauer."
+        f"Order-to-Cash: vom Auftrag bis zum Zahlungseingang · Zeitraum "
+        f"{pd.Timestamp(pf['zeitraum']['von']):%d.%m.%Y} bis {pd.Timestamp(pf['zeitraum']['bis']):%d.%m.%Y}"
     )
+    eng = pf["engpaesse"][0]
+    zeige(
+        ui.karte(
+            ui.statistik(
+                [
+                    (de(pf["anzahl_faelle"]), "Fälle", "neutral"),
+                    (de(pf["durchlaufzeit_tage"]["median"], 1) + " Tage", "Durchlaufzeit (Median)", "neutral"),
+                    (de(pf["nacharbeit"]["quote_pct"], 1) + " %", "Nacharbeit", "warnung"),
+                    (de(op / 100000, 1) + " T€", f"Offene Forderungen {pd.Timestamp(stichtag):%d.%m.%Y}", "neutral"),
+                ]
+            ),
+            "Prozess auf einen Blick",
+            "Process Overview",
+        )
+    )
+    st.error(f"Engpass: {eng['uebergang']} · {de(eng['anteil_an_gesamtzeit_pct'], 1)} % der gesamten Übergangszeit.")
+    links, rechts = st.columns([1.4, 1])
+    with links:
+        abschnitt("Wartezeit nach Übergang", "Waiting Time")
+        ue = pa.uebergaenge.head(8).copy()
+        ue["Übergang"] = ue["von"] + " → " + ue["nach"]
+        diagramm(dia.balken(ue, "Übergang", "anteil_gesamtzeit_pct", "%", kosten=True, hoehe=320))
+    with rechts:
+        abschnitt("Durchlaufzeiten", "Throughput Time")
+        diagramm(dia.verteilung(pa.faelle))
+    abschnitt("Offene Forderungen nach Kunde", "Open Receivables")
     tabelle_anzeigen(
         treiber(log, stichtag)[["kunden_nr", "gebunden_eur", "dso_beitrag_tage", "variante"]],
         hide_index=True,
@@ -402,30 +418,13 @@ def prozess(
             "Beobachtete Variante": st.column_config.TextColumn(width=400),
         },
     )
-    eng = pf["engpaesse"][0]
-    zeige(
-        ui.karte(
-            ui.statistik(
-                [
-                    (de(pf["anzahl_faelle"]), "Fälle", "neutral"),
-                    (de(pf["anzahl_varianten"]), "Varianten", "neutral"),
-                    (de(pf["durchlaufzeit_tage"]["median"], 1) + " Tage", "Median", "neutral"),
-                    (de(pf["nacharbeit"]["quote_pct"], 1) + " %", "Nacharbeit", "warnung"),
-                ]
-            ),
-            "Prozessportfolio",
+    with st.expander("Hinweise zur Messung"):
+        st.caption(
+            "DSO und offene Posten stammen aus denselben Faktura- und Zahlungsereignissen. "
+            "Offene Fälle sind rechtszensiert; deren letzte Aktivität ist kein Zahlungseingang. "
+            "Durchlaufzeiten beschreiben beobachtete Verläufe, keine abgeschlossene O2C-Dauer. "
+            "Der Prozesszeitraum ist unabhängig vom gewählten Geschäftsjahr."
         )
-    )
-    st.error(f"Engpass: {eng['uebergang']} · {de(eng['anteil_an_gesamtzeit_pct'], 1)} % der gesamten Übergangszeit.")
-    links, rechts = st.columns([1.4, 1])
-    with links:
-        abschnitt("Wartezeit nach Übergang")
-        ue = pa.uebergaenge.head(8).copy()
-        ue["Übergang"] = ue["von"] + " → " + ue["nach"]
-        diagramm(dia.balken(ue, "Übergang", "anteil_gesamtzeit_pct", "%", kosten=True, hoehe=320))
-    with rechts:
-        abschnitt("Durchlaufzeiten")
-        diagramm(dia.verteilung(pa.faelle))
     with st.expander("Prozesslandkarte und Varianten", expanded=False):
         zeige(dia.prozesslandkarte(pa.uebergaenge))
         st.caption("Kanten: Fallübergänge und Median in Stunden; gestrichelt = Rücksprung, rot = größter Zeitanteil.")
@@ -492,83 +491,59 @@ def cockpit(
         tabelle_anzeigen(
             pd.DataFrame(
                 [
-                    ("Management-Cockpit", "ERP und Stammdaten", FRAGEN["cockpit"], "Geschäftsführung"),
-                    ("Profitabilität", "Allokierte Ergebnisrechnung", "Wer trägt den Erfolg?", "Controlling, Vertrieb"),
-                    ("Simulation", "Jahresportfolio", "Was wäre wenn?", "Geschäftsführung"),
-                    ("Process Mining", "O2C-Event-Log", FRAGEN["prozess"], "Prozessmanagement"),
-                    ("Balanced Scorecard", "Kennzahlen und Berichtstexte", FRAGEN["bsc"], "Strategie"),
-                    ("KI-Analyst · SQL", "SQL-Datenbank", FRAGEN["sql"], "Fachbereiche"),
-                    (
-                        "Management-Bericht",
-                        "Geprüfte Fakten und Freigaben",
-                        "Was darf berichtet werden?",
-                        "Controlling",
-                    ),
-                    ("Agent & Audit", "Sitzungsprotokoll", FRAGEN["audit"], "Controlling, IT"),
+                    ("Cockpit", "Management Cockpit", FRAGEN["cockpit"]),
+                    ("Portfolio", "Profitability & Simulation", "Wer trägt das Ergebnis – und was wäre, wenn?"),
+                    ("Prozesse", "Order-to-Cash", FRAGEN["prozess"]),
+                    ("Scorecard", "Balanced Scorecard", "Erreichen wir unsere strategischen Ziele?"),
+                    ("KI-Analyst", "AI Analyst · Text-to-SQL", FRAGEN["sql"]),
+                    ("Bericht", "Management Report", "Welche Aussagen sind belegt und freigegeben?"),
+                    ("Agent & Audit", "Agent & Audit Trail", FRAGEN["audit"]),
                 ],
-                columns=["Tab", "Datenquelle", "Leitfrage", "Für wen"],
+                columns=["Tab", "Englisch", "Leitfrage"],
             ),
             hide_index=True,
             width="stretch",
         )
     links, rechts = st.columns([1.5, 1])
     with links:
-        zeige(
-            ui.karte(
-                ui.ablauf(
-                    [
-                        ("Daten", "fertig"),
-                        ("Analyse", "fertig"),
-                        ("Simulation", "fertig"),
-                        ("Kommentar", "aktiv"),
-                        ("Freigabe", "offen"),
-                    ]
-                )
-                + '<p class="va-unter">'
-                + ui.e("Simulation im Portfolio; namentliche Freigabe im Bericht.")
-                + "</p>"
-                + ui.checkliste([(a, "deterministisch", "neutral") for a in aussagen_cache(db, gj)]),
-                "BI-Copilot",
-            )
+        aussagen = "".join(
+            f'<p class="va-absatz">{ui.e(a)}</p>' for a in aussagen_cache(db, gj) if "VarianceAI" not in a
         )
+        zeige(ui.karte(aussagen, "BI-Copilot · Kernaussagen", "Key Messages"))
     with rechts:
         r = bereinigung(db, str(ROHEXPORT_PATH))
         zeige(
             ui.karte(
                 ui.checkliste(
                     [
-                        ("Daten-Scan", de(len(tx)) + " Fakturapositionen", "gut"),
-                        ("Ausreißer separat", de(int(tx.ist_ausreisser.sum())) + " Positionen", "warnung"),
-                        ("Buchungskreis", ", ".join(sorted(tx.buchungskreis.unique())), "neutral"),
-                        ("Quellen", "Faktura · Stammdaten · Kosten", "neutral"),
+                        ("Fakturapositionen geprüft", de(len(tx)), "gut"),
+                        ("Ausreißer ausgenommen", de(int(tx.ist_ausreisser.sum())), "warnung"),
                     ]
                 ),
-                "Geprüfte Datenbasis",
+                "Datenbasis",
+                "Data Quality",
             )
         )
     steuerung = tx[(tx.ist_ausreisser == 0) & (tx.geschaeftsjahr == gj)]
     dbj = deckungsbeitragsrechnung(steuerung, tabelle(db, "produktfixkosten"), gruppen=["produktkategorie"])
     links, rechts = st.columns(2)
     with links:
-        abschnitt("Umsatzentwicklung · AC / PY")
+        abschnitt("Umsatz je Quartal · AC und PY", "Revenue by Quarter")
         diagramm(dia.verlauf(quartale, gj))
     with rechts:
-        abschnitt("Ergebnisbeitrag nach Produktkategorie")
+        abschnitt("DB II nach Produktgruppe", "Contribution Margin II")
         diagramm(dia.balken(dbj, "produktkategorie", "db_ii_eur", "€"))
     st.caption(
-        "DB I = Umsatz − variable Herstellkosten · DB II = DB I − Erzeugnisfixkosten (Fertigung 4100–4300, "
-        "QS 4500) · EBIT = DB II − Unternehmensfixkosten (Instandhaltung 4400) – identisch mit VarianceAI."
+        "DB I = Umsatz − variable Herstellkosten · DB II = DB I − Erzeugnisfixkosten · "
+        "EBIT = DB II − Unternehmensfixkosten"
     )
-    with st.expander("Deckungsbeiträge und Datenqualität", expanded=False):
+    with st.expander("Details: Deckungsbeiträge und Datenprüfung", expanded=False):
         tabelle_anzeigen(dbj, hide_index=True, width="stretch")
         if r:
-            st.json(r)
+            st.json(r, expanded=False)
         tabelle_anzeigen(tx[(tx.ist_ausreisser == 1) & (tx.geschaeftsjahr == gj)], hide_index=True)
-    abschnitt("Management-Kommentar · Entwurf")
-    st.caption(
-        "Plan-Ist-Analyse → VarianceAI. Dieser KI-Entwurf wird nicht exportiert. "
-        "Faktengebundene Freigabe im Tab Management-Bericht."
-    )
+    abschnitt("Executive Summary · Entwurf", "Draft")
+    st.caption("Entwurf zur Orientierung. Die geprüfte, namentliche Freigabe erfolgt im Tab Bericht.")
     f = fakten(db, gj)
     schluessel = f"bericht_{gj}_{anbieter}"
     if st.button("Executive Summary erzeugen", type="primary", key="btn_bericht"):

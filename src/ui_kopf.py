@@ -1,5 +1,7 @@
 """Kennzahlen-Leiste mit periodenreinem Vorjahresvergleich."""
 
+from dataclasses import replace
+
 import pandas as pd
 import streamlit as st
 
@@ -11,7 +13,12 @@ from src.ui_daten import quartale_cache
 
 def kennzahlenleiste(db, gj, dso_reihe, dso_wert, bsc_reihe, bsc_wert, zeige):
     quartale = quartale_cache(db)
-    karten = kpis(quartale, gj)[:3]
+    englisch = {
+        "Umsatz · Mio. €": "Revenue",
+        "DB-II-Marge": "Contribution Margin II",
+        "EBIT · Mio. €": "Operating Profit",
+    }
+    karten = [replace(k, en=englisch.get(k.label, "")) for k in kpis(quartale, gj)[:3]]
     dso_py = dso_reihe[
         (dso_reihe.geschaeftsjahr == gj - 1) & (dso_reihe.quartal == ("Q3" if gj == 2026 else "Q4"))
     ].dso_tage
@@ -25,6 +32,7 @@ def kennzahlenleiste(db, gj, dso_reihe, dso_wert, bsc_reihe, bsc_wert, zeige):
             ("30.09. · PY " if gj == 2026 else "31.12. · PY ")
             + (de(float(dso_py.iloc[0]), 1) if len(dso_py) else "nicht vorhanden"),
             dso_reihe.loc[dso_reihe.geschaeftsjahr == gj, "dso_tage"].tolist(),
+            en="Days Sales Outstanding",
         )
     )
     bsc_spark = []
@@ -44,14 +52,18 @@ def kennzahlenleiste(db, gj, dso_reihe, dso_wert, bsc_reihe, bsc_wert, zeige):
             de(bsc_wert, 1) + " %" if pd.notna(bsc_wert) else "nicht gemessen",
             "Stand Q3" if gj == 2026 else "Stand Q4",
             "neutral",
-            "Vier Perspektiven · Demo-Ziele",
+            "Vier Perspektiven",
             bsc_spark,
+            en="Scorecard Achievement",
         )
     )
     zeige(ui.kpi_leiste(karten))
     st.caption(
         f"Berichtsperiode: Geschäftsjahr {gj} · "
-        + ("Jan–Sep / PY Jan–Sep · " if gj == 2026 else "Ganzjahr / PY Ganzjahr · ")
-        + "Sparklines: Quartale · Ausreißer aus Kennzahlen ausgenommen"
+        + (
+            "Januar bis September, Vorjahr (PY) im gleichen Zeitraum"
+            if gj == 2026
+            else "Gesamtjahr, Vorjahr (PY) zum Vergleich"
+        )
     )
     return quartale

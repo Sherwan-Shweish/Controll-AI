@@ -12,7 +12,7 @@ from src.ui_anzeigen import sicherer_text
 def zeige_audit(config, agent, audit, leitfrage, daten, ergebnis):
     leitfrage("audit")
     links, rechts = st.columns(2)
-    # Zuerst Aktionen ausführen, anschließend aus dem aktuellen Protokoll zählen (FlowAudit-AI).
+    # Zuerst Aktionen ausführen, anschließend aus dem aktuellen Protokoll zählen.
     if links.button("Datentext-Injection testen", key="datentext_test"):
         if pruefe_datentext(agent):
             st.success("Datentext-Anweisung erkannt und blockiert. Keine BSC-Kennzahl oder Datenbank verändert.")
@@ -34,92 +34,56 @@ def zeige_audit(config, agent, audit, leitfrage, daten, ergebnis):
     ereignisse = audit.eintraege
     erlaubt = sum(e.art == "ZUGELASSEN" for e in ereignisse)
     blockiert = sum(e.art == "ABGELEHNT" for e in ereignisse)
-    analysen = sum(e.art == "ANALYSE" for e in ereignisse)
-    prozess = st.session_state.get("prozess_zaehler", 0)
     karten = [
         (
             "datenbank",
             "Datenprüfung",
-            "Schlüssel und Währungen prüfen; Ausreißer kennzeichnen.",
-            "Fakten ohne markierte Ausreißer.",
+            "Prüft Schlüssel und Währungen, kennzeichnet Ausreißer.",
+            "Kennzahlen ohne markierte Ausreißer.",
             f"{de(len(daten))} Positionen · {de(daten.ist_ausreisser.sum())} markiert",
         ),
         (
-            "datenbank",
-            "Ergebnis-Engine",
-            "DB I → DB II → DB III; Allokation auf Cent.",
-            "DB III summiert sich zum EBIT.",
-            f"{de(len(ergebnis))} Ergebnisobjekte",
-        ),
-        (
-            "funke",
-            "Simulation",
-            "Preis, Menge, Material und Fixkosten deterministisch.",
-            "Brückensumme = EBIT-Differenz.",
-            f"{len(st.session_state.get('szenarien', {}))} gespeicherte Szenarien",
-        ),
-        (
-            "check",
-            "Process Mining",
-            "Beobachtete Ereignisse, Varianten und Engpässe.",
-            "Berechnung beim Öffnen des Prozess-Tabs.",
-            f"{de(prozess)} analysierte Fälle",
+            "diagramm",
+            "Analyse",
+            "Python berechnet Deckungsbeiträge, Simulation und Prozesskennzahlen.",
+            "Rechnet centgenau – nie die KI.",
+            "",
         ),
         (
             "funke",
             "KI-Agent",
-            "Formuliert aus Fakten; Daten sind keine Anweisungen.",
-            "Keine eigenständige Freigabe.",
-            f"{analysen} protokollierte Analysen",
-        ),
-        (
-            "schild",
-            "Faktenprüfung / SQL-Wächter",
-            "Zahlenbeleg, Parser, Whitelist und read-only.",
-            "Unbelegte Aussagen und Schreibzugriffe sperren.",
+            "Formuliert aus geprüften Fakten und übersetzt Fragen in SQL.",
+            "Nur Lesezugriff; jede Zahl wird geprüft.",
             f"{erlaubt} zugelassen · {blockiert} blockiert",
         ),
         (
             "person",
             "Freigabe",
             "Name, Fakten und Datenstand gehören zusammen.",
-            "Nach einer Änderung erneut prüfen und freigeben.",
-            f"{pfad['stufen'][4]} Kennzahlen namentlich freigegeben",
+            "Kein Bericht ohne namentliche Freigabe.",
+            f"{pfad['stufen'][4]} Kennzahlen freigegeben",
         ),
     ]
-    st.html(
-        ui.agentenkarten(
-            [
-                ui.Agentenkarte(icon, name, "Aktiv", aufgabe, regel, zahl, "neutral")
-                for icon, name, aufgabe, regel, zahl in karten
-            ]
-        )
-    )
-    st.caption(
-        "Berichtstrichter: aktuelle Kennzahlobjekte, nicht Kunden oder Transaktionszeilen. "
-        "Demo-Wesentlichkeit: Geldbeträge ab 1.000 €; übrige gemessene Kennzahlen vollständig. "
-        "„Im Bericht“ zählt im vorbereiteten Export enthaltene, freigegebene Kommentar-Fakten."
-    )
-    links, rechts = st.columns([1, 1.4])
+    links, rechts = st.columns([1.15, 1])
     with links:
-        namen = ["Analyseobjekte", "Wesentlich", "Kommentiert", "Faktengeprüft", "Namentlich freigegeben", "Im Bericht"]
         st.html(
             ui.karte(
-                ui.trichter(
+                ui.agentenkarten(
                     [
-                        ("check", n, "Aktueller Daten- und Szenariostand", str(z), "Kennzahlen")
-                        for n, z in zip(namen, pfad["stufen"], strict=True)
+                        ui.Agentenkarte(icon, name, "aktiv", aufgabe, regel, zahl, "neutral")
+                        for icon, name, aufgabe, regel, zahl in karten
                     ]
                 ),
-                "Vom Fakt zum Bericht",
+                "So arbeitet ControllAI",
+                "How It Works",
             )
         )
-        gr = sorted(pfad["gruende"].items(), key=lambda x: -x[1])
-        maximum = max((z for _, z in gr), default=1) or 1
+        namen = ["Kennzahlen", "Wesentlich", "Kommentiert", "Faktengeprüft", "Namentlich freigegeben", "Im Bericht"]
         st.html(
             ui.karte(
-                ui.rangliste([(n, "Kennzahlobjekte", str(z), z / maximum, "leise") for n, z in gr]),
-                "Warum nicht berichtet",
+                ui.trichter([("check", n, "", str(z), "") for n, z in zip(namen, pfad["stufen"], strict=True)]),
+                "Von der Kennzahl zum Bericht",
+                "From KPI to Report",
             )
         )
     with rechts:
@@ -133,13 +97,21 @@ def zeige_audit(config, agent, audit, leitfrage, daten, ergebnis):
                         for e in ereignisse
                     ]
                 ),
-                "Append-only · Sitzungsprotokoll",
+                "Audit-Protokoll",
+                "Audit Log",
             )
         )
     st.caption(
-        f"Zeilenlimit: {config.sql_max_rows} · Zeitlimit: {de(config.sql_timeout_seconds, 1)} s. "
-        "Hash-Kette exportierbar; kein revisionssicheres Archiv."
+        f"SQL-Grenzen: höchstens {config.sql_max_rows} Zeilen und {de(config.sql_timeout_seconds, 1)} s je Abfrage."
     )
+    with st.expander("Warum Kennzahlen nicht im Bericht stehen"):
+        gr = sorted(pfad["gruende"].items(), key=lambda x: -x[1])
+        maximum = max((z for _, z in gr), default=1) or 1
+        st.html(ui.karte(ui.rangliste([(n, "Kennzahlen", str(z), z / maximum, "leise") for n, z in gr])))
+        st.caption(
+            "Demo-Wesentlichkeit: Geldbeträge ab 1.000 €; übrige gemessene Kennzahlen vollständig. "
+            "„Im Bericht“ zählt im vorbereiteten Export enthaltene, freigegebene Kommentar-Fakten."
+        )
     with st.expander("SQL-Guardrails: Abfrage, Entscheidung und Grund"):
         for e in ereignisse:
             if e.sql:

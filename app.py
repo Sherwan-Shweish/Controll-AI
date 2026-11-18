@@ -20,7 +20,6 @@ from src.demo import erstelle_agent
 from src.diagnose import bericht as diagnosebericht
 from src.laufzeit import anbieter_vorauswahl, fehlender_zugang, lade_geheimnisse, laufzeit
 from src.strategie import scorecard_stand
-from src.ui_anzeigen import abschnitt
 from src.ui_daten import (
     aussagen_cache,
     bereinigung,
@@ -33,7 +32,7 @@ from src.ui_daten import (
 )
 
 st.set_page_config(
-    page_title="ControllAI · Enterprise-BI-Copilot",
+    page_title="ControllAI · Profitabilität und BI",
     page_icon=str(Path(__file__).parent / "static/favicon.png"),
     layout="wide",
 )
@@ -65,6 +64,12 @@ FRAGEN = {
     "sql": "Wie bekommen Entscheider verlässliche Antworten ohne BI-Wartezeit?",
     "audit": "Welche Schritte hat der Agent ausgeführt – und was wurde blockiert?",
 }
+SEITEN_EN = {
+    "cockpit": "Management Cockpit",
+    "prozess": "Order-to-Cash",
+    "sql": "AI Analyst · Text-to-SQL",
+    "audit": "Agent & Audit Trail",
+}
 TABS = ["Cockpit", "Portfolio", "Prozesse", "Scorecard", "KI-Analyst", "Bericht", "Agent & Audit"]
 
 
@@ -73,7 +78,7 @@ def zeige(html: str) -> None:
 
 
 def leitfrage(modul: str) -> None:
-    zeige(ui.leitfrage(FRAGEN[modul]))
+    zeige(ui.leitfrage(FRAGEN[modul], SEITEN_EN.get(modul, "")))
 
 
 def diagramm(chart) -> None:
@@ -98,7 +103,7 @@ def pruefstatus(antwort: AgentAnswer) -> None:
 
 
 def ki_fehler(exc: Exception) -> None:
-    st.error("Die KI-Anfrage ist fehlgeschlagen. Offline (Mock) wählen oder Zugang prüfen.")
+    st.error("Die KI-Anfrage ist fehlgeschlagen. Demo-Modus wählen oder Zugang prüfen.")
     audit.ergaenze("FEHLER", "KI-Anbieter", type(exc).__name__)
 
 
@@ -118,7 +123,7 @@ with st.sidebar:
     zeige(
         '<div class="va va-marke"><div '
         'class="va-logo">Σ</div><div><b>ControllAI</b><small>Profitabilität · '
-        "Strategie · Prozesse</small></div></div>"
+        "Strategie<br>Profitability &amp; BI</small></div></div>"
     )
     jahre = sorted(tabelle(db, "umsatz_transaktionen").geschaeftsjahr.unique().tolist(), reverse=True)
     gj = st.selectbox(
@@ -127,13 +132,14 @@ with st.sidebar:
         key="geschaeftsjahr",
         format_func=lambda j: f"{j} YTD · Jan–Sep" if j == 2026 else str(j),
     )
-    anbieter = st.selectbox(
-        "KI-Anbieter",
-        ["mock", "claude", "gemini"],
-        index=["mock", "claude", "gemini"].index(anbieter_vorauswahl()),
-        key="ki_anbieter",
-        format_func={"mock": "Offline (Mock)", "claude": "Anthropic Claude", "gemini": "Google Gemini"}.get,
-    )
+    with st.expander("Einstellungen"):
+        anbieter = st.selectbox(
+            "KI-Anbieter",
+            ["mock", "claude", "gemini"],
+            index=["mock", "claude", "gemini"].index(anbieter_vorauswahl()),
+            key="ki_anbieter",
+            format_func={"mock": "Demo ohne KI-Schlüssel", "claude": "Anthropic Claude", "gemini": "Google Gemini"}.get,
+        )
     grund = fehlender_zugang(anbieter)
     cfg = CONFIG.model_copy(
         update={
@@ -147,17 +153,13 @@ with st.sidebar:
         st.warning(grund + " Offline-Modus arbeitet weiter.")
     elif not anbieter == "mock" and modus.demo:
         st.warning("Anbieter konnte nicht geladen werden. uv sync und Zugang prüfen. Offline-Modus arbeitet weiter.")
-    if modus.demo:
-        st.info("Demo-Modus: regelbasierte Texte, echte Datenbankabfragen und Prüfungen.")
-    st.caption(f"Modell: {('mock:deterministisch' if modus.demo else anbieter + ':' + cfg.model)}")
-    with st.expander("Systemprüfung", expanded=False):
-        st.code(diagnosebericht(), language=None)
-    st.divider()
     export_bereich = st.container()
-    st.caption("RheinMain Industrietechnik GmbH · fiktiv. Alle Unternehmensdaten sind synthetisch.")
-    st.caption("DAX-40-Bezug: Klassifikationsmethodik für Geschäftsberichte; Beispieltexte sind frei erfunden.")
+    st.caption("Alle Daten sind synthetisch. Die RheinMain Industrietechnik GmbH ist fiktiv.")
+    with st.expander("Systemprüfung", expanded=False):
+        st.caption(f"Modell: {('mock:deterministisch' if modus.demo else anbieter + ':' + cfg.model)}")
+        st.code(diagnosebericht(), language=None)
 if UMSCHALTBAR:
-    (kopf, rechts) = st.columns([5, 1.2], vertical_alignment="center")
+    (kopf, rechts) = st.columns([4.4, 1.5], vertical_alignment="center")
     with rechts:
         wahl = st.segmented_control(
             "Darstellung",
@@ -173,19 +175,14 @@ if UMSCHALTBAR:
 else:
     kopf = st.container()
 tx = tabelle(db, "umsatz_transaktionen")
-objekte = tabelle(db, "kunden").shape[0] + tabelle(db, "materialien").shape[0] + tabelle(db, "kostenstellen").shape[0]
 with kopf:
     zeige(
         ui.kopfzeile(
             "ControllAI",
-            "Enterprise-BI-Copilot · Profitabilität · Strategie · Prozesse",
+            "Profitabilität, Strategie und Prozesse · Profitability & Business Intelligence",
             f"Geschäftsjahr {gj}" + (" · YTD" if gj == 2026 else ""),
-            "Stand 30.09.2026 · Jan–Sep" if gj == 2026 else f"Stand 31.12.{gj}",
-            [
-                ui.pill("Offline · Mock" if modus.demo else "KI · " + anbieter, "akzent", punkt=True),
-                ui.pill("Synthetische Daten", "neutral"),
-                ui.pill(f"{objekte} Analyseobjekte", "leise"),
-            ],
+            ("Stand 30.09.2026" if gj == 2026 else f"Stand 31.12.{gj}") + " · RheinMain Industrietechnik GmbH (fiktiv)",
+            [ui.pill("Demo-Modus" if modus.demo else "KI · " + anbieter, "akzent", punkt=True)],
         )
     )
 ergebnis_jahr = pd.DataFrame()
@@ -274,8 +271,6 @@ with tab_audit, fehlergrenze("Agent & Audit"):
 
     zeige_audit(CONFIG, agent, audit, leitfrage, tx, ergebnis_jahr)
 with export_bereich, fehlergrenze("Export"):
-    abschnitt("Datenexport")
-    st.caption("Berichte und Excel-Gegenprüfung im Tab Management-Bericht.")
     if st.button("Power-BI-Paket vorbereiten", key="export_vorbereiten"):
         st.download_button(
             "Power-BI-Paket (CSV)",
