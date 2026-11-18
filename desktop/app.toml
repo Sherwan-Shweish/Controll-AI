@@ -8,7 +8,7 @@ name = "ControllAI"                      # Fenstertitel, App-Name, Ordnernamen
 untertitel = "Profitabilität · Strategie · Prozesse"
 logo = "Σ"                               # Glyphe der Ladeseite (wie im Kopf der App)
 bundle_id = "de.shweish.controllai"      # eindeutig je Agent (umgekehrte Domain)
-version = "2.3.0"
+version = "2.3.1"
 einstieg = "app.py"                      # Streamlit-Skript relativ zum Projektordner
 
 [fenster]

@@ -40,13 +40,17 @@ def ergebnisrechnung(db: str | Path) -> pd.DataFrame:
     """Vollständige Allokation vor jedem Filter. Summe DB III = EBIT (identisch mit VarianceAI).
 
     Stufen und Schlüssel (siehe ``src/kostenstufen.py``):
-    * Erzeugnisfixkosten je Quartal und Produktkategorie aus der Tabelle ``produktfixkosten``;
+    * Fertigungs- und Qualitätskosten je Quartal und Produktkategorie aus der Tabelle ``produktfixkosten``;
       Fertigung (4100–4300) weiter nach variablen Herstellkosten auf Kunden und Regionen,
       Qualitätssicherung (4500) nach Demo-Servicegewicht (Kunden-Endziffer 4 → 12, sonst 1).
-    * Unternehmensfixkosten (Instandhaltung 4400) je Quartal nach positivem Umsatz.
+    * Instandhaltungskosten (Kostenstelle 4400) je Quartal nach positivem Umsatz.
     Es entstehen keine zusätzlichen Kosten; jeder Cent wird genau einmal verteilt.
+
+    ``produktvar_cent`` und ``gemeinvar_cent`` weisen aus, welcher Teil dieser Kostenstellenkosten
+    beschäftigungsvariabel ist (Material, Energie, Fertigungslöhne). Die Simulation braucht diese Trennung:
+    Nur der fixe Teil bleibt bei einer Mengenänderung unverändert.
     """
-    from src.kostenstufen import GEMEIN, kostenpools
+    from src.kostenstufen import FERTIGUNG, GEMEIN, QUALITAET, kostenpools
 
     tx = lade_tabelle(db, "umsatz_transaktionen")
     tx = tx[tx.ist_ausreisser == 0].copy()
@@ -67,6 +71,18 @@ def ergebnisrechnung(db: str | Path) -> pd.DataFrame:
     for periode, ind in d.groupby(["geschaeftsjahr", "quartal"]).groups.items():
         gewichte = d.loc[ind, "umsatz_cent"].clip(lower=0).tolist()
         d.loc[ind, "gemein_cent"] = verteile(int(pools.get(periode, 0)), gewichte)
+    kosten = lade_tabelle(db, "plan_ist_finanzen")
+    d["produktvar_cent"] = 0
+    d["gemeinvar_cent"] = 0
+    for ziel, quelle, stellen in [
+        ("produktvar_cent", "produktfix_cent", FERTIGUNG + QUALITAET),
+        ("gemeinvar_cent", "gemein_cent", GEMEIN),
+    ]:
+        variabel = kostenpools(kosten, stellen, nur_variabel=True)
+        for periode, ind in d.groupby(["geschaeftsjahr", "quartal"]).groups.items():
+            gewichte = d.loc[ind, quelle].clip(lower=0).tolist()
+            if sum(gewichte) > 0:
+                d.loc[ind, ziel] = verteile(int(variabel.get(periode, 0)), gewichte)
     d["db_i_cent"] = d.umsatz_cent - d.variabel_cent
     d["db_ii_cent"] = d.db_i_cent - d.produktfix_cent
     d["db_iii_cent"] = d.db_ii_cent - d.gemein_cent

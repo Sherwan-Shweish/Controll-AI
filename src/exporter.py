@@ -279,7 +279,7 @@ Faktentabellen
   fakt_umsatz        eine Zeile je Fakturaposition (Ist)
   fakt_umsatzplan    Umsatzplanung je Quartal und Produktkategorie
   fakt_kosten        Plan und Ist je Kostenstelle, Kostenart und Quartal
-  fakt_produktfixkosten  Erzeugnisfixkosten (DB II) je Quartal und Produktkategorie
+  fakt_produktfixkosten  Fertigungs- und Qualitätskosten (DB II) je Quartal und Produktkategorie
 
 Dimensionstabellen
   dim_datum          Kalender (Tag) mit Jahr, Quartal, Monat, Periode

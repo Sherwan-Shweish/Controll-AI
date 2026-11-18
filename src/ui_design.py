@@ -8,7 +8,7 @@ Gestaltungsregeln (bewusst begründet, nicht nur Geschmack):
   - Datenfarben folgen IBCS: Ist (AC) hell gefüllt, Vorjahr (PY) grau, Plan (PL)
     umrandet, Forecast (FC) gestrichelt/transparent.
   - Abweichungen: günstig ``#3AAB86`` / ungünstig ``#C8382F`` – auf der dunklen
-    Fläche validiert (Kontrast ≥ 3:1, Farbsehschwäche ΔE 12,6 deutan) und
+    Fläche validiert (Kontrast ≥ 3:1, bei simulierter Rot-Grün-Sehschwäche unterscheidbar) und
     zusätzlich immer mit Vorzeichen beschriftet, nie Farbe allein.
   - Der Akzent Kupfer ``#D9825B`` ist **ausschließlich** für Interaktion und
     KI-Elemente reserviert und erscheint nie in Diagrammen.
@@ -51,7 +51,7 @@ PALETTEN: dict[str, dict[str, str]] = {
         "ac": "#EDEBE6",
         "py": "#6E6C66",
         "pl": "#EDEBE6",
-        # Abweichungen (validiert auf #161615: Kontrast ≥ 3:1, CVD ΔE 12,6) und Textvarianten ≥ 4,5:1
+        # Abweichungen (validiert auf #161615: Kontrast ≥ 3:1, bei Rot-Grün-Schwäche unterscheidbar), Text ≥ 4,5:1
         "gut": "#3AAB86",
         "schlecht": "#C8382F",
         "gut_text": "#5CC79F",
@@ -77,7 +77,7 @@ PALETTEN: dict[str, dict[str, str]] = {
         "ac": "#2B2A27",
         "py": "#A9A69E",
         "pl": "#2B2A27",
-        # validiert auf #FFFFFF: Kontrast ≥ 3:1, CVD ΔE 8,8 (deutan); Textvarianten ≥ 4,5:1
+        # validiert auf #FFFFFF: Kontrast ≥ 3:1, bei Rot-Grün-Sehschwäche unterscheidbar; Textvarianten ≥ 4,5:1
         "gut": "#2A9D72",
         "schlecht": "#C8382F",
         "gut_text": "#1E6E4E",

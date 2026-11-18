@@ -61,7 +61,8 @@ def test_jeder_tab_nennt_seine_leitfrage(app):
 def test_engpass_wird_hervorgehoben(app):
     app.session_state["haupttabs"] = "Prozesse"
     app.run()
-    assert any("Engpass: Faktura buchen → Mahnung" in e.value for e in app.error)
+    assert any("Größter Zeitanteil: Faktura buchen → Mahnung" in e.value for e in app.error)
+    assert any("kein Kapazitätsengpass" in e.value for e in app.error)  # Zahlungsziel ist kein Engpass
     assert any("Order-to-Cash: vom Auftrag bis zum Zahlungseingang" in c.value for c in app.caption)
 
 
@@ -197,3 +198,13 @@ def test_export_und_drilldown(app):
     labels = [d.label for d in app.get("download_button")]
     assert "Excel mit Formel-Gegenprüfung" in labels
     assert "Management-Bericht PDF" in labels
+
+
+def test_demo_modus_kennzeichnet_musterantworten_und_kostenverhalten(app):
+    """Hinterlegte Musterantworten gelten nicht als KI-Leistung; Kostenstellenkosten heißen nicht „Fixkosten“."""
+    assert any("hinterlegte Musterantworten" in i.value for i in app.info)
+    hinweise = "\n".join(c.value for c in app.caption)
+    assert "keine reinen Fixkosten" in hinweise
+    assert "beschäftigungsvariablen Kostenstellenkosten" in hinweise
+    alles = html(app) + hinweise
+    assert "Erzeugnisfixkosten" not in alles and "Unternehmensfixkosten" not in alles

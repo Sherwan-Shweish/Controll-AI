@@ -1,5 +1,5 @@
 {
-  "version": "2.2.1",
+  "version": "2.3.1",
   "seed": 42,
   "jahr": 2026,
   "stichtag": "2026-09-30",
@@ -12,7 +12,7 @@
     "db_ii_qualitaet": [
       "4500"
     ],
-    "db_iii_unternehmen": [
+    "db_iii_instandhaltung": [
       "4400"
     ]
   },
@@ -1305,6 +1305,10 @@
     "sonstige_variabel_cent": 854560200,
     "produktfix_cent": 2792239846,
     "gemein_cent": 252511654,
+    "kst_variabel_basis_cent": 2372754118,
+    "kst_fix_basis_cent": 671997382,
+    "kst_variabel_cent": 2372754118,
+    "kst_fix_cent": 671997382,
     "db_i_cent": 3607677460,
     "db_ii_cent": 815437614,
     "bruecke": [

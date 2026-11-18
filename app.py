@@ -154,6 +154,11 @@ with st.sidebar:
     elif not anbieter == "mock" and modus.demo:
         st.warning("Anbieter konnte nicht geladen werden. uv sync und Zugang prüfen. Offline-Modus arbeitet weiter.")
     export_bereich = st.container()
+    if modus.demo:
+        st.caption(
+            "Demo-Modus: Texte, SQL-Entwürfe und Vorschläge stammen aus hinterlegten Mustern, nicht aus einem "
+            "Sprachmodell. Alle Zahlen berechnet Python."
+        )
     st.caption("Alle Daten sind synthetisch. Die RheinMain Industrietechnik GmbH ist fiktiv.")
     with st.expander("Systemprüfung", expanded=False):
         st.caption(f"Modell: {('mock:deterministisch' if modus.demo else anbieter + ':' + cfg.model)}")

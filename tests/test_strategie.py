@@ -207,10 +207,10 @@ def test_excel_formeln_cache_und_status(strategie):
     blob = excel_gegenpruefung(strategie, sz)
     formeln = load_workbook(io.BytesIO(blob), data_only=False)
     cache = load_workbook(io.BytesIO(blob), data_only=True)
-    assert formeln["Simulation"]["C19"].value.startswith("=")
+    assert formeln["Simulation"]["C21"].value.startswith("=")  # EBIT SIM (seit 2.3.1 zwei Eingabezeilen mehr)
     assert formeln["Simulation"]["B6"].number_format == "0.0%"
     assert cache["Simulation"]["B6"].value == 0.07
-    assert cache["Simulation"]["C19"].value == sz["ebit_cent"] / 100
+    assert cache["Simulation"]["C21"].value == sz["ebit_cent"] / 100
     assert cache["Gegenprüfung"]["C6"].value == "OK"
     assert len(formeln["Gegenprüfung"].conditional_formatting) > 0
     for ws in formeln:

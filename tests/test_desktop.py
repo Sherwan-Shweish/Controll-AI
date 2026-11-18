@@ -29,7 +29,7 @@ def test_konfiguration_aus_app_toml(konfig, tmp_path):
     assert konfig.einstieg_pfad == PROJEKT_ORDNER / "app.py" and konfig.einstieg_pfad.exists()
     assert konfig.datenordner == tmp_path / "ControllAI"  # nie im Projekt- oder Git-Ordner
     assert "ANTHROPIC_API_KEY" in konfig.geheimnisse
-    assert konfig.logo == "Σ" and konfig.version == "2.3.0"
+    assert konfig.logo == "Σ" and konfig.version == "2.3.1"
 
 
 def test_praeferenzen_speichern_und_laden(konfig):

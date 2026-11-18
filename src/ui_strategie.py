@@ -71,8 +71,15 @@ def profitabilitaet(daten: pd.DataFrame):
     )
     with st.expander("So wird gerechnet: Deckungsbeitragsstufen und Kostenverteilung"):
         st.caption(
-            "DB I = Umsatz − variable Herstellkosten · DB II = DB I − Erzeugnisfixkosten (Fertigung, "
-            "Qualitätssicherung) · DB III = DB II − Unternehmensfixkosten (Instandhaltung). Summe DB III = EBIT."
+            "DB I = Umsatz − variable Herstellkosten (Material, Zukaufteile) · DB II = DB I − Kosten der "
+            "Fertigungs- und Qualitätskostenstellen · DB III = DB II − Instandhaltungskosten. "
+            "Summe DB III = EBIT (vereinfacht, ohne Vertrieb und Verwaltung)."
+        )
+        st.caption(
+            "Die Kostenstellenkosten sind keine reinen Fixkosten: Material, Energie und Fertigungslöhne folgen der "
+            "Beschäftigung, Gehälter und Abschreibungen sind fix. DB II und DB III zeigen deshalb eine "
+            "Ergebnisrechnung mit geschlüsselten Kostenstellenkosten – keine verursachungsgerechte Kunden- oder "
+            "Produktkalkulation."
         )
         st.caption(
             "Allokation erfolgt vor dem Drill-down. Ein Filter verteilt die Kosten nicht neu. "
@@ -134,10 +141,13 @@ def simulation(daten: pd.DataFrame, jahr: int, audit) -> dict:
         c.html(ui.karte(ui.statistik([(de(ergebnis[feld] / 100000, 1) + " T€", label, "neutral")])))
     with st.expander("Annahmen der Simulation"):
         st.caption(
-            "Jahresportfolio ohne Drill-down-Filter. Konstanter Kunden-/Produktmix; keine Elastizität. "
-            "Materialanteil der variablen Kosten: 70 % als Demo-Annahme. "
+            "Jahresportfolio ohne Drill-down-Filter. Konstanter Kunden-/Produktmix; keine Elastizität, "
+            "keine Kapazitätsgrenze. Materialanteil der variablen Herstellkosten: 70 % als Demo-Annahme. "
             "Reihenfolge: Preis → Menge → Materialkosten → Fixkosten. Preis-Mengen-Interaktion liegt im Mengeneffekt. "
-            "Variable Kosten skalieren mit der Menge, Fixkosten nur mit ihrem Regler. "
+            "Mit der Menge skalieren die variablen Herstellkosten und die beschäftigungsvariablen Kostenstellenkosten "
+            f"(Material, Energie, Fertigungslöhne: {de(ergebnis['kst_variabel_basis_cent'] / 100000, 1)} T€). "
+            "Fix sind Gehälter, Abschreibungen und Fremdinstandhaltung "
+            f"({de(ergebnis['kst_fix_basis_cent'] / 100000, 1)} T€); sie reagieren nur auf den Fixkostenregler. "
             "Jeder Schritt wird auf Cent gerundet."
         )
     name = st.text_input("Szenarioname", value="Strategievariante", max_chars=80)

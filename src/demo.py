@@ -388,7 +388,7 @@ def _executive_summary(f: dict[str, Any]) -> dict[str, Any]:
     if f.get("umsatz_eur") is not None:
         satz = f"Der Umsatz {gj} beträgt {de(f['umsatz_eur'] / 1e6, 1)} Mio. €"
         if f.get("umsatz_yoy_pct") is not None:
-            satz += f" ({vz(f['umsatz_yoy_pct'])} % zum Vorjahr)"
+            satz += f" ({vz(f['umsatz_yoy_pct'])} % zum gleichen Vorjahreszeitraum)"
         if f.get("abweichung_umsatz_zum_plan_pct") is not None:
             satz += f"; die Abweichung zum Plan liegt bei {vz(f['abweichung_umsatz_zum_plan_pct'])} %"
         kern.append(satz + ".")
@@ -473,12 +473,94 @@ def _executive_summary(f: dict[str, Any]) -> dict[str, Any]:
         "handlungsempfehlungen": empf[:4],
         "risiken_und_datenluecken": [
             ("Synthetische Demo-Daten: Die Aussagen illustrieren die Methodik, nicht ein reales Unternehmen."),
-            "Erzeugnis- und Unternehmensfixkosten werden über Schlüssel zugeordnet (Herstellkosten, "
+            "Fertigungs-, Qualitäts- und Instandhaltungskosten werden über Schlüssel zugeordnet (Herstellkosten, "
             "Servicegewicht, Umsatz); die Schlüssel sind Annahmen, keine nachgewiesene Verursachung.",
             (
                 "Ursachen der Abweichungen sind aus den Zahlen allein nicht ableitbar und mit "
                 "den Fachbereichen zu klären."
             ),
+        ],
+    }
+
+
+_O2C_MERKMALE = ("Faktura", "Zahlungseingang", "Mahnung")
+
+
+def _ist_order_to_cash(f: dict[str, Any]) -> bool:
+    """Order-to-Cash erkennt man am Prozessnamen oder an Faktura-, Mahn- und Zahlungsaktivitäten."""
+    if "order-to-cash" in str(f.get("prozess", "")).lower():
+        return True
+    return any(m in e.get("uebergang", "") for e in f.get("engpaesse", []) for m in _O2C_MERKMALE)
+
+
+def _prozessbericht_o2c(f: dict[str, Any], kern: list[str]) -> dict[str, Any]:
+    """Musterbericht für Order-to-Cash: Zahlungsziel, Verzug und Nacharbeit in der Auftragsprüfung.
+
+    Der längste Übergang nach der Faktura enthält das vereinbarte Zahlungsziel. Das ist vertragliche Wartezeit
+    und kein Kapazitätsengpass; steuerbar sind der Verzug nach Fälligkeit und die Qualität der Auftragsanlage.
+    """
+    engpaesse = f.get("engpaesse", [])
+    nach = f.get("nacharbeit", {})
+    empf: list[dict[str, Any]] = []
+    if engpaesse:
+        e = engpaesse[0]
+        kern.append(
+            f"Den größten Zeitanteil hat der Übergang {e['uebergang']}: Median {de(e['median_stunden'], 1)} Stunden, "
+            f"{de(e['anteil_an_gesamtzeit_pct'], 1)} % der gesamten Übergangszeit. Darin liegt das vereinbarte "
+            "Zahlungsziel – vertragliche Wartezeit, kein Kapazitätsengpass."
+        )
+        empf.append(
+            {
+                "massnahme": "Zahlungserinnerung vor Fälligkeit und gestuftes Mahnwesen "
+                "als Timer-Ereignisse modellieren",
+                "begruendung": f"Der Übergang {e['uebergang']} bindet {de(e['anteil_an_gesamtzeit_pct'], 1)} % der "
+                "Übergangszeit. Das Zahlungsziel selbst ist vereinbart; beeinflussbar ist, wie früh erinnert und "
+                "wie konsequent nach Fälligkeit gemahnt wird.",
+                "prioritaet": "hoch",
+                "verantwortlich": "Forderungsmanagement / Debitorenbuchhaltung",
+            }
+        )
+    if len(engpaesse) > 1:
+        z = engpaesse[1]
+        kern.append(
+            f"An zweiter Stelle steht {z['uebergang']} mit {de(z['anteil_an_gesamtzeit_pct'], 1)} % der Gesamtzeit."
+        )
+        empf.append(
+            {
+                "massnahme": "Gateway nach Zahlungsverhalten: Zahlungsbedingungen und Kreditlimits spät zahlender "
+                "Kunden prüfen",
+                "begruendung": f"Beim Übergang {z['uebergang']} dauern 10 % der Fälle länger als "
+                f"{de(z['p90_stunden'], 1)} Stunden. Für diese Kunden kommen kürzere Zahlungsziele, Skonto oder "
+                "Vorkasse in Betracht; die Entscheidung liegt beim Vertrieb.",
+                "prioritaet": "mittel",
+                "verantwortlich": "Vertrieb / Forderungsmanagement",
+            }
+        )
+    if nach.get("faelle"):
+        aktivitaet = next(iter(nach.get("wiederholte_aktivitaeten", {})), "eine Aktivität")
+        kern.append(
+            f"In {de(nach['quote_pct'], 1)} % der Fälle wird „{aktivitaet}“ wiederholt – eine Nacharbeitsschleife."
+        )
+        empf.insert(
+            1,
+            {
+                "massnahme": "Auftragsanlage mit Pflichtfeldern und automatischer Preis- und Bonitätsprüfung "
+                "(Service Task)",
+                "begruendung": f"Nacharbeitsquote von {de(nach['quote_pct'], 1)} %: Unvollständige oder fehlerhafte "
+                "Aufträge früh abfangen, damit die Prüfung nicht wiederholt werden muss.",
+                "prioritaet": "hoch",
+                "verantwortlich": "Vertriebsinnendienst / Auftragsabwicklung",
+            },
+        )
+    return {
+        "titel": f"Prozessanalyse {f.get('prozess', '')}".strip(),
+        "kernaussagen": kern[:5],
+        "handlungsempfehlungen": empf[:4],
+        "risiken_und_datenluecken": [
+            ("Das Event-Log enthält nur Abschlusszeitpunkte; Übergangszeiten umfassen Warte- und Bearbeitungszeit."),
+            "Offene Fälle sind noch nicht bezahlt; ihre Dauer ist keine abgeschlossene Durchlaufzeit.",
+            "Ursachen des Zahlungsverzugs (Reklamation, Liquidität, fehlende Unterlagen) sind im Event-Log "
+            "nicht sichtbar.",
         ],
     }
 
@@ -494,6 +576,8 @@ def _prozessbericht(f: dict[str, Any]) -> dict[str, Any]:
             f"{de(dlz.get('p90', 0), 1)} Tage)."
         )
     ]
+    if _ist_order_to_cash(f):
+        return _prozessbericht_o2c(f, kern)
     empf: list[dict[str, Any]] = []
     if engpaesse:
         e = engpaesse[0]

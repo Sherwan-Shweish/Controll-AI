@@ -642,7 +642,7 @@ CREATE TABLE kostenstellen (
 CREATE TABLE produktkategorien (
     produktkategorie      TEXT PRIMARY KEY,
     produktbereich        TEXT NOT NULL,   -- 'Produkte' oder 'Services'
-    fixkosten_quartal_eur REAL NOT NULL    -- Information: Ø Erzeugnisfixkosten je Quartal 2025
+    fixkosten_quartal_eur REAL NOT NULL    -- Information: Ø zugeordnete Fertigungs-/Qualitätskosten je Quartal 2025
 );
 CREATE TABLE materialien (
     material_nr      TEXT PRIMARY KEY,     -- SAP-Materialnummer ohne führende Nullen
@@ -698,7 +698,7 @@ CREATE TABLE plan_ist_finanzen (
     PRIMARY KEY (geschaeftsjahr, quartal, kostenstelle, kostenart)
 );
 CREATE TABLE produktfixkosten (
-    -- Erzeugnisfixkosten (DB II): Fertigung 4100–4300 und Qualitätssicherung 4500,
+    -- Zugeordnete Kostenstellenkosten (DB II): Fertigung 4100–4300 und Qualitätssicherung 4500,
     -- je Periode nach Anteil an den variablen Herstellkosten auf die Produktkategorien geschlüsselt.
     geschaeftsjahr   INTEGER NOT NULL,
     quartal          TEXT NOT NULL,
@@ -861,7 +861,7 @@ def erzeuge_alles(ausgabe: str | Path | None = None, seed: int = STANDARD_SEED) 
         raise ValueError(f"Plan ohne Istzeile: {list(fehlend)}")
 
     fixkosten = tabelle_produktfixkosten(tx, kosten)
-    # Information in den Stammdaten: durchschnittliche Erzeugnisfixkosten je Quartal im letzten vollen Jahr.
+    # Information in den Stammdaten: Ø zugeordnete Kostenstellenkosten je Quartal im letzten vollen Jahr.
     mittel = fixkosten[fixkosten.geschaeftsjahr == 2025].groupby("produktkategorie").fixkosten_eur.mean().round(2)
     stamm["produktkategorien"]["fixkosten_quartal_eur"] = stamm["produktkategorien"].produktkategorie.map(mittel)
     db_path = ausgabe / "controlling_erp.db"

@@ -16,7 +16,7 @@ def quartalskennzahlen(db: str) -> pd.DataFrame:
     dbs = deckungsbeitragsrechnung(tx, lade_tabelle(db, "produktfixkosten"), gruppen=["geschaeftsjahr", "quartal"])
     kosten = gemeinkosten(lade_tabelle(db, "plan_ist_finanzen"))
     out = dbs.merge(kosten, on=["geschaeftsjahr", "quartal"], validate="one_to_one")
-    # EBIT = DB II − Unternehmensfixkosten (Instandhaltung) = Umsatz − HK − alle Kostenstellenkosten.
+    # EBIT = DB II − Instandhaltungskosten = Umsatz − HK − alle Kostenstellenkosten.
     out["ebit_eur"] = (out.db_ii_eur - out.ist_eur).round(2)
     out["variable_kostenquote_pct"] = out.variable_kosten_eur / out.umsatz_eur * 100
     return out

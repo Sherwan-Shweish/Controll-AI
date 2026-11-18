@@ -29,6 +29,12 @@ def simuliere(basis: pd.DataFrame, annahmen: Annahmen) -> dict:
     if basis.empty:
         raise ValueError("Leere Simulationsbasis.")
     u, v, p, g = [int(basis[s].sum()) for s in ["umsatz_cent", "variabel_cent", "produktfix_cent", "gemein_cent"]]
+    # Beschäftigungsvariabler Teil der Kostenstellenkosten (Material, Energie, Fertigungslöhne). Er folgt der Menge;
+    # nur der fixe Rest (Gehälter, Abschreibungen, Fremdinstandhaltung) reagiert allein auf den Fixkostenregler.
+    # Fehlen die Spalten (eigene Daten ohne Kostenarten), gelten die Kostenstellenkosten vollständig als fix.
+    pv = int(basis["produktvar_cent"].sum()) if "produktvar_cent" in basis else 0
+    gv = int(basis["gemeinvar_cent"].sum()) if "gemeinvar_cent" in basis else 0
+    pf, gf = p - pv, g - gv
     # Materialanteil ist eine explizite Demo-Annahme, keine SAP-Kostenartenzuordnung.
     material = skaliere(v, -30)
     sonst = v - material
@@ -36,13 +42,15 @@ def simuliere(basis: pd.DataFrame, annahmen: Annahmen) -> dict:
     u_neu = skaliere(u_preis, annahmen.menge_pct)
     m_menge, s_neu = skaliere(material, annahmen.menge_pct), skaliere(sonst, annahmen.menge_pct)
     m_neu = skaliere(m_menge, annahmen.material_pct)
-    p_neu, g_neu = skaliere(p, annahmen.fix_pct), skaliere(g, annahmen.fix_pct)
+    pv_neu, gv_neu = skaliere(pv, annahmen.menge_pct), skaliere(gv, annahmen.menge_pct)
+    pf_neu, gf_neu = skaliere(pf, annahmen.fix_pct), skaliere(gf, annahmen.fix_pct)
+    p_neu, g_neu = pv_neu + pf_neu, gv_neu + gf_neu
     start = u - v - p - g
     effekte = [
         ("Preis", u_preis - u),
-        ("Menge", u_neu - u_preis - (m_menge + s_neu - v)),
+        ("Menge", u_neu - u_preis - (m_menge + s_neu - v) - (pv_neu - pv) - (gv_neu - gv)),
         ("Materialkosten", m_menge - m_neu),
-        ("Fixkosten", p + g - p_neu - g_neu),
+        ("Fixkosten", pf + gf - pf_neu - gf_neu),
     ]
     schritte = [{"schritt": "AC · Basis", "von_cent": 0, "bis_cent": start, "wert_cent": start, "typ": "AC"}]
     stand = start
@@ -72,6 +80,10 @@ def simuliere(basis: pd.DataFrame, annahmen: Annahmen) -> dict:
         "sonstige_variabel_cent": s_neu,
         "produktfix_cent": p_neu,
         "gemein_cent": g_neu,
+        "kst_variabel_basis_cent": pv + gv,
+        "kst_fix_basis_cent": pf + gf,
+        "kst_variabel_cent": pv_neu + gv_neu,
+        "kst_fix_cent": pf_neu + gf_neu,
         "db_i_cent": u_neu - m_neu - s_neu,
         "db_ii_cent": u_neu - m_neu - s_neu - p_neu,
         "bruecke": schritte,

@@ -269,7 +269,9 @@ def excel_gegenpruefung(daten: pd.DataFrame, sz: dict) -> bytes:
             "Formeln beim Öffnen neu berechnen. Status OK bei Differenz unter einem halben Cent.",
             "DB II: Fertigung 4100–4300 nach Herstellkosten, QS 4500 nach Servicegewicht 12/1; "
             "DB III: Instandhaltung 4400.",
-            "SIM: 70 % Materialanteil, Reihenfolge Preis, Menge, Material, Fixkosten.",
+            "SIM: 70 % Materialanteil, Reihenfolge Preis, Menge, Material, Fixkosten. Beschäftigungsvariable "
+            "Kostenstellenkosten (Material, Energie, Fertigungslöhne) folgen der Menge; nur Gehälter, "
+            "Abschreibungen und Fremdinstandhaltung sind fix.",
             (
                 "Alle Daten synthetisch. Drill-down und Simulation im Bericht beziehen sich "
                 "auf das gewählte Geschäftsjahr."
@@ -282,9 +284,9 @@ def excel_gegenpruefung(daten: pd.DataFrame, sz: dict) -> bytes:
     headers = [
         "Kunde",
         "Umsatz",
-        "Variabel",
-        "Produktfix",
-        "Gemein",
+        "Variable HK",
+        "Fertigung/QS",
+        "Instandhaltung",
         "DB I Excel",
         "DB II Excel",
         "DB III Excel",
@@ -355,39 +357,51 @@ def excel_gegenpruefung(daten: pd.DataFrame, sz: dict) -> bytes:
     sim = wb.add_worksheet("Simulation")
     sim.write_row(0, 0, ["Kennzahl", "Basis / Eingabe", "Excel", "Python", "Status"], kopf)
     base = {k: int(daten[k].sum()) / 100 for k in ["umsatz_cent", "variabel_cent", "produktfix_cent", "gemein_cent"]}
+    produktvar = int(daten["produktvar_cent"].sum()) / 100 if "produktvar_cent" in daten else 0.0
+    gemeinvar = int(daten["gemeinvar_cent"].sum()) / 100 if "gemeinvar_cent" in daten else 0.0
     inputs = [
         ("Umsatz", base["umsatz_cent"]),
-        ("Variable Kosten", base["variabel_cent"]),
-        ("Produktfixkosten", base["produktfix_cent"]),
-        ("Gemeinkosten", base["gemein_cent"]),
+        ("Variable Herstellkosten", base["variabel_cent"]),
+        ("Fertigungs- und Qualitätskosten", base["produktfix_cent"]),
+        ("Instandhaltungskosten", base["gemein_cent"]),
         ("Preis %", sz["annahmen"]["preis_pct"] / 100),
         ("Menge %", sz["annahmen"]["menge_pct"] / 100),
         ("Materialkosten %", sz["annahmen"]["material_pct"] / 100),
         ("Fixkosten %", sz["annahmen"]["fix_pct"] / 100),
         ("Materialanteil", 0.7),
+        ("davon beschäftigungsvariabel: Fertigung/QS", produktvar),
+        ("davon beschäftigungsvariabel: Instandhaltung", gemeinvar),
     ]
     for r, (name, wert) in enumerate(inputs, 1):
         sim.write(r, 0, name)
-        sim.write_number(r, 1, wert, prozent if r >= 5 else eingabe)
+        sim.write_number(r, 1, wert, prozent if 5 <= r <= 9 else eingabe)
     # Excel rechnet aus Eingangszellen; Python-Zielwerte kommen aus der Engine.
     formeln = [
-        ("Umsatz SIM", "=ROUND(ROUND(B2*(1+B6),2)*(1+B7),2)", sz["umsatz_cent"] / 100),
+        ("Umsatz SIM", "=ROUND(ROUND(B2*(1+B6),2)*(1+B7),2)", sz["umsatz_cent"] / 100),  # Zeile 14
         ("Material SIM", "=ROUND(ROUND(ROUND(B3*B10,2)*(1+B7),2)*(1+B8),2)", sz["material_cent"] / 100),
         ("Sonstige variable Kosten SIM", "=ROUND((B3-ROUND(B3*B10,2))*(1+B7),2)", sz["sonstige_variabel_cent"] / 100),
-        ("Produktfix SIM", "=ROUND(B4*(1+B9),2)", sz["produktfix_cent"] / 100),
-        ("Gemein SIM", "=ROUND(B5*(1+B9),2)", sz["gemein_cent"] / 100),
-        ("DB I SIM", "=ROUND(C12-C13-C14,2)", sz["db_i_cent"] / 100),
-        ("DB II SIM", "=ROUND(C17-C15,2)", sz["db_ii_cent"] / 100),
-        ("EBIT SIM", "=ROUND(C18-C16,2)", sz["ebit_cent"] / 100),
-        ("Brückenwirkung", "=ROUND(SUM(B22:B25),2)", sz["wirkung_cent"] / 100),
+        (
+            "Fertigung/QS SIM",
+            "=ROUND(ROUND(B11*(1+B7),2)+ROUND((B4-B11)*(1+B9),2),2)",
+            sz["produktfix_cent"] / 100,
+        ),
+        (
+            "Instandhaltung SIM",
+            "=ROUND(ROUND(B12*(1+B7),2)+ROUND((B5-B12)*(1+B9),2),2)",
+            sz["gemein_cent"] / 100,
+        ),
+        ("DB I SIM", "=ROUND(C14-C15-C16,2)", sz["db_i_cent"] / 100),
+        ("DB II SIM", "=ROUND(C19-C17,2)", sz["db_ii_cent"] / 100),
+        ("EBIT SIM", "=ROUND(C20-C18,2)", sz["ebit_cent"] / 100),
+        ("Brückenwirkung", "=ROUND(SUM(B24:B27),2)", sz["wirkung_cent"] / 100),
     ]
-    for r, (name, f, wert) in enumerate(formeln, 11):
+    for r, (name, f, wert) in enumerate(formeln, 13):
         n = r + 1
         sim.write(r, 0, name)
         sim.write_formula(r, 2, f, geld, wert)
         sim.write_number(r, 3, wert, geld)
         sim.write_formula(r, 4, f'=IF(ABS(C{n}-D{n})<0.005,"OK","FEHLER")', None, "OK")
-    for r, schritt in enumerate(sz["bruecke"][1:-1], 21):
+    for r, schritt in enumerate(sz["bruecke"][1:-1], 23):
         sim.write(r, 0, schritt["schritt"])
         sim.write_number(r, 1, schritt["wert_cent"] / 100, eingabe)
     sim.set_column("A:A", 34)
@@ -399,10 +413,10 @@ def excel_gegenpruefung(daten: pd.DataFrame, sz: dict) -> bytes:
     for r, (label, f, cache) in enumerate(
         [
             ("Ergebnisrechnung", f'=COUNTIF(Ergebnisrechnung!L2:L{letzte},"FEHLER")', caches.count("FEHLER")),
-            ("Simulation", '=COUNTIF(Simulation!E12:E20,"FEHLER")', 0),
+            ("Simulation", '=COUNTIF(Simulation!E14:E22,"FEHLER")', 0),
             (
                 "Brücke gegen EBIT-Differenz",
-                "=IF(ABS(Simulation!C20-(Simulation!C19-(Simulation!B2-Simulation!B3-"
+                "=IF(ABS(Simulation!C22-(Simulation!C21-(Simulation!B2-Simulation!B3-"
                 "Simulation!B4-Simulation!B5)))<0.005,0,1)",
                 0,
             ),
@@ -418,7 +432,7 @@ def excel_gegenpruefung(daten: pd.DataFrame, sz: dict) -> bytes:
     )
     pruef.set_column("A:A", 45)
     pruef.set_column("B:C", 18)
-    for blatt, bereich in [(ws, f"L2:L{letzte}"), (sim, "E12:E20"), (pruef, "C2:C6")]:
+    for blatt, bereich in [(ws, f"L2:L{letzte}"), (sim, "E14:E22"), (pruef, "C2:C6")]:
         for status, fmt in [("OK", gruen), ("FEHLER", rot)]:
             blatt.conditional_format(
                 bereich, {"type": "cell", "criteria": "equal to", "value": f'"{status}"', "format": fmt}

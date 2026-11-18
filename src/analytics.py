@@ -364,14 +364,14 @@ def deckungsbeitragsrechnung(
     """Mehrstufige Deckungsbeitragsrechnung.
 
     DB I  = Umsatz − variable Kosten (Standardherstellkosten)
-    DB II = DB I − Erzeugnisfixkosten
+    DB II = DB I − zugeordnete Fertigungs- und Qualitätskosten der Kostenstellen
 
     ``fixkosten`` ist entweder die Tabelle ``produktfixkosten`` (je Geschäftsjahr, Quartal und
     Produktkategorie, Spalte ``fixkosten_eur``) oder – für eigene Daten ohne Periodenbezug – eine
     Stammdatentabelle mit konstantem ``fixkosten_quartal_eur`` je Produktkategorie.
 
     Gerechnet wird zunächst je Geschäftsjahr, Quartal und Produktkategorie, damit
-    die quartalsbezogenen Fixkosten korrekt zugeordnet werden; danach wird auf
+    die quartalsbezogenen Kostenstellenkosten korrekt zugeordnet werden; danach wird auf
     die gewünschte Gruppierung verdichtet.
     """
     basis_keys = ["geschaeftsjahr", "quartal", "produktkategorie"]
@@ -461,7 +461,15 @@ def kennzahlen_bericht(
 
     db_jahr = deckungsbeitragsrechnung(tx, fixkosten, gruppen=["geschaeftsjahr"]).set_index("geschaeftsjahr")
     akt = db_jahr.loc[geschaeftsjahr]
-    vj = db_jahr.loc[geschaeftsjahr - 1] if geschaeftsjahr - 1 in db_jahr.index else None
+    # Vorjahresvergleich immer im gleichen Zeitraum: Liegt das Geschäftsjahr erst bis Q3 vor, zählt auch im
+    # Vorjahr nur Q1–Q3. Ein Vergleich von neun mit zwölf Monaten wäre rechnerisch richtig, fachlich aber falsch.
+    quartale_akt = set(tx.loc[tx["geschaeftsjahr"] == geschaeftsjahr, "quartal"])
+    tx_vj = tx[(tx["geschaeftsjahr"] == geschaeftsjahr - 1) & tx["quartal"].isin(quartale_akt)]
+    vj = (
+        deckungsbeitragsrechnung(tx_vj, fixkosten, gruppen=["geschaeftsjahr"]).set_index("geschaeftsjahr").iloc[0]
+        if not tx_vj.empty
+        else None
+    )
 
     from src.kostenstufen import GEMEIN
 
@@ -532,6 +540,7 @@ def kennzahlen_bericht(
         },
     }
     if vj is not None:
+        fakten["vorjahresvergleich_zeitraum"] = "–".join(sorted(quartale_akt)[:: max(1, len(quartale_akt) - 1)])
         fakten["umsatz_vorjahr_eur"] = _r(vj["umsatz_eur"], 0)
         fakten["umsatz_yoy_pct"] = _r((akt["umsatz_eur"] - vj["umsatz_eur"]) / vj["umsatz_eur"] * 100)
         fakten["db_ii_vorjahr_eur"] = _r(vj["db_ii_eur"], 0)
@@ -737,15 +746,15 @@ def main() -> None:
     """``python -m src.analytics`` – zeigt die deterministische Faktenbasis (kein API-Schlüssel nötig)."""
     parser = argparse.ArgumentParser(description="Controlling- und Process-Mining-Kennzahlen")
     parser.add_argument("--db", default=str(PROJECT_ROOT / "data" / "controlling_erp.db"))
-    parser.add_argument("--eventlog", default=str(PROJECT_ROOT / "data" / "sample" / "event_log_p2p.csv"))
+    parser.add_argument("--eventlog", default=str(PROJECT_ROOT / "data" / "sample" / "event_log_o2c.csv"))
     parser.add_argument("--jahr", type=int, default=2025)
     args = parser.parse_args()
     logging.basicConfig(level=logging.WARNING)
 
     print("=== Controlling-Kennzahlen ===")
     print(json.dumps(kennzahlen_bericht(args.db, args.jahr), ensure_ascii=False, indent=2))
-    print("\n=== Process Mining: Purchase-to-Pay ===")
-    analyse = analysiere_prozess(lade_event_log(args.eventlog), prozessname="Purchase-to-Pay")
+    print("\n=== Process Mining: Order-to-Cash ===")
+    analyse = analysiere_prozess(lade_event_log(args.eventlog), prozessname="Order-to-Cash")
     print(json.dumps(analyse.to_facts(), ensure_ascii=False, indent=2))
 
 

@@ -48,7 +48,7 @@ Portfolio-Projekt mit synthetischen Daten.
 
 ![Portfolio](docs/screenshots/02_portfolio.png)
 
-**Prozesse** – Order-to-Cash: Durchlaufzeit, Engpass, Nacharbeit und offene Forderungen nach Kunde:
+**Prozesse** – Order-to-Cash: Durchlaufzeit, Zeitanteile je Übergang, Nacharbeit und offene Forderungen nach Kunde:
 
 ![Prozesse](docs/screenshots/03_prozesse.png)
 
@@ -78,10 +78,10 @@ Darstellung hell (Umschalter oben rechts, lokal und in der Mac-App):
 
 | Aufgabe im Controlling | Ohne Werkzeug | Mit ControllAI |
 |---|---|---|
-| Kunden- und Produktergebnis | Excel-Auswertungen je Anfrage, Fixkosten oft pauschal verteilt | DB I–III je Kunde, Region und Produktgruppe, Verteilung centgenau und nachvollziehbar |
+| Kunden- und Produktergebnis | Excel-Auswertungen je Anfrage, Kostenstellenkosten pauschal verteilt | DB I–III je Kunde, Region und Produktgruppe; Verteilung centgenau, Schlüssel offen ausgewiesen |
 | Schwerpunkte erkennen | Listen sortieren, Bauchgefühl | ABC-/Pareto-Analyse mit Kunden mit negativem Deckungsbeitrag auf einen Blick |
 | Entscheidungen vorbereiten | Szenarien einzeln nachrechnen | Simulation von Preis, Menge, Material- und Fixkosten mit EBIT-Brücke |
-| Forderungen und Prozesse | DSO als Einzelzahl aus der Buchhaltung | Order-to-Cash-Analyse: Engpass, Nacharbeit und offene Forderungen je Kunde |
+| Forderungen und Prozesse | DSO als Einzelzahl aus der Buchhaltung | Order-to-Cash-Analyse: Zeitanteile je Übergang, Nacharbeit und offene Forderungen je Kunde |
 | Ad-hoc-Fragen der Fachbereiche | Warten auf eine BI-Auswertung | Frage auf Deutsch, Antwort aus einer geprüften, rein lesenden SQL-Abfrage |
 | Management-Bericht | Zahlen von Hand übertragen | Kommentar aus benannten Kennzahlen, namentliche Freigabe, Export als PowerPoint, PDF, Excel und Power BI |
 
@@ -93,7 +93,7 @@ Darstellung hell (Umschalter oben rechts, lokal und in der Mac-App):
 |---|---|
 | **Cockpit** | Fünf Kennzahlen mit Vorjahresvergleich im gleichen Zeitraum, Kernaussagen, Umsatz je Quartal, DB II nach Produktgruppe |
 | **Portfolio** | DB I–III nach Kunde, Region und Produktgruppe mit Filter, ABC-/Pareto-Analyse, Was-wäre-wenn-Simulation |
-| **Prozesse** | Order-to-Cash aus dem Event-Log: Durchlaufzeit, Engpass, Varianten, offene Forderungen, BPMN-Verbesserungsvorschläge |
+| **Prozesse** | Order-to-Cash aus dem Event-Log: Durchlaufzeit, Zeitanteile je Übergang, Varianten, offene Forderungen, BPMN-Verbesserungsvorschläge |
 | **Scorecard** | Balanced Scorecard mit fünf Kennzahlen in vier Perspektiven; Textanalyse von Geschäftsberichten mit Belegzitat |
 | **KI-Analyst** | Text-to-SQL: deutsche Frage, geprüfte lesende Abfrage, Ergebnis, Faktenprüfung der Antwort |
 | **Bericht** | Kommentar aus geprüften Kennzahlen, namentliche Freigabe, Export als PowerPoint, PDF und Excel mit Formeln |
@@ -111,20 +111,32 @@ und der Mensch entscheidet. Die Beispieltexte in der App sind frei erfunden.
 
 ## Fachliche Methodik
 
-- **Deckungsbeitragsstufen:** DB I = Umsatz − variable Herstellkosten. DB II = DB I − Erzeugnisfixkosten (Fertigung
-  4100–4300 und Qualitätssicherung 4500). DB III = DB II − Unternehmensfixkosten (Instandhaltung 4400).
-  Summe DB III = EBIT = Umsatz − Herstellkosten − alle Kostenstellenkosten. Die Verteilung erfolgt auf den Cent genau
-  vor jedem Filter und bleibt additiv.
+- **Ergebnisstufen:** DB I = Umsatz − variable Standardherstellkosten (Material, Zukaufteile). DB II = DB I − Kosten
+  der Fertigungs- und Qualitätskostenstellen (4100–4300, 4500). DB III = DB II − Instandhaltungskosten (4400).
+  Summe DB III = EBIT (vereinfacht) = Umsatz − Herstellkosten − alle Kostenstellenkosten; Vertriebs- und
+  Verwaltungskosten bildet das Modell nicht ab. Die Verteilung erfolgt auf den Cent genau vor jedem Filter und
+  bleibt additiv.
+- **Kostenverhalten:** Die Kostenstellenkosten sind keine reinen Fixkosten. Material, Energie und Fertigungslöhne
+  folgen der Beschäftigung (2026 YTD: 23,73 von 30,45 Mio. €, 77,9 %); Gehälter, Abschreibungen und
+  Fremdinstandhaltung sind fix (6,72 Mio. €). Dieselbe Trennung nutzt VarianceAI in der flexiblen Plankostenrechnung.
+  DB II und DB III sind deshalb eine Ergebnisrechnung mit geschlüsselten Kostenstellenkosten und keine
+  verursachungsgerechte Kunden- oder Produktkalkulation.
 - **Verteilungsschlüssel:** Fertigung nach Herstellkosten; Qualitätssicherung nach einem Servicegewicht je Kunde;
   Instandhaltung nach positivem Umsatz. Diese Schlüssel sind Annahmen der Demo, kein Nachweis einer Verursachung.
 - **ABC-Analyse:** nach positivem DB II; A bis 80 %, B bis 95 %, Rest C. Negative Beiträge zählen zu C.
 - **Simulation:** Reihenfolge Preis → Menge → Materialkosten → Fixkosten; Materialanteil 70 % als Demo-Annahme.
+  Mit der Menge skalieren die variablen Herstellkosten **und** die beschäftigungsvariablen Kostenstellenkosten; der
+  Fixkostenregler wirkt nur auf die fixen Kostenarten. Beispiel 2026 YTD: +10 % Menge verbessern das EBIT um
+  1,23 Mio. € – würden alle Kostenstellenkosten als fix behandelt, wären es rechnerisch 3,61 Mio. €.
   Die Brückensumme entspricht der EBIT-Differenz auf den Cent. Kein Nachfrage- oder Kapazitätsmodell.
 - **DSO:** Netto-Forderungen am Stichtag / Nettoumsatz der letzten 90 Tage × 90. Faktura, Zahlung und offene Posten
   stammen aus derselben Belegbasis; Event-Log und Kennzahl stimmen auf den Cent überein.
 - **Order-to-Cash:** Auftrag → Lieferung → Faktura → Zahlung mit Varianten wie Teillieferung, Gutschrift, Mahnung und
   Nacharbeit. Ein Fall ist eine Fakturaposition. Offene Fälle sind noch nicht abgeschlossen; beobachtete Dauern sind
-  deshalb keine vollständigen Zahlungszyklen. Rangfolgen beweisen keine Kausalität.
+  deshalb keine vollständigen Zahlungszyklen. Rangfolgen beweisen keine Kausalität. Der größte Zeitanteil liegt
+  zwischen Faktura und Mahnung; darin steckt das Zahlungsziel von 30 Tagen – vertragliche Wartezeit, kein
+  Kapazitätsengpass. In den Demo-Daten zahlen alle Kunden nach Fälligkeit (40 bis 70 Tage); das ist bewusst
+  vereinfacht.
 - **Offene Forderungen** bezeichnen hier Netto-Debitoren, nicht das gesamte Working Capital mit Vorräten und
   Verbindlichkeiten.
 - **Balanced Scorecard:** fünf Kennzahlen, vier gleichgewichtete Perspektiven. Grün ab 100 % Zielerreichung, Gelb ab
@@ -141,6 +153,8 @@ DSO 46,4 Tage, 3.244 Order-to-Cash-Fälle. Die Werte eines frischen Demo-Laufs s
 ## KI-Analyst und Sicherheit
 
 Die KI rechnet nicht. Sie übersetzt Fragen in SQL und formuliert Antworten; beides wird geprüft.
+Im Demo-Modus ohne API-Key stammen SQL-Entwürfe, Texte und Klassifikationsvorschläge aus hinterlegten Mustern, nicht
+aus einem Sprachmodell; die Oberfläche weist das aus. Prüfungen, Berechnungen und Sicherheitsgrenzen laufen echt.
 
 - **SQL-Schutz in vier Schichten:** Parser (genau eine Anweisung, nur `SELECT`/`WITH`), Freigabeliste für Tabellen,
   Spalten und Funktionen, rein lesende Datenbankverbindung, Zeilen- und Zeitlimit je Abfrage.
@@ -179,6 +193,10 @@ gemeinsames Zahlenwerk (Buchungskreis 1000, Stichtag 30.09.2026).
 
 Umsatz, Herstellkosten, Kostenstellenkosten und EBIT stimmen in beiden Projekten centgenau überein; das wird in den
 Tests gegen feste Referenzwerte geprüft.
+
+**Unterschiedliche Sicht auf dieselben Kostenstellen:** VarianceAI trennt die Kostenstellenkosten nach ihrem Verhalten
+(beschäftigungsvariabel und fix) für die flexible Plankostenrechnung; ControllAI ordnet dieselben Kosten den
+Ergebnisstufen DB II und DB III zu und nutzt dieselbe Trennung in der Simulation.
 
 ---
 
@@ -249,7 +267,7 @@ ControllAI/
 │   ├── seed_data.py       Synthetische Daten (Seed 42)
 │   └── ui_*.py            Oberfläche: Designsystem, Diagramme, Seiten
 ├── desktop/               Mac-App: eigenes Fenster über pywebview
-├── tests/                 437 Tests
+├── tests/                 443 Tests
 ├── tools/                 Nachweis- und Referenzdaten erzeugen
 ├── docs/                  Standard, Quellen, Demo-Nachweis, Screenshots
 └── .github/workflows/     Automatische Prüfung bei jedem Push
@@ -264,10 +282,12 @@ uv run pytest -q
 uv run ruff check .
 ```
 
-**437 Tests**, vollständig offline und ohne API-Key. Bei jedem Push laufen ruff und pytest automatisch über GitHub
+**443 Tests**, vollständig offline und ohne API-Key. Bei jedem Push laufen ruff und pytest automatisch über GitHub
 Actions auf Python 3.11 und 3.13. Geprüft werden unter anderem:
 
 - **Rechenlogik:** Deckungsbeitragsstufen, Kostenverteilung ohne Cent-Differenz, ABC-Analyse, Simulation, DSO
+- **Fachprüfung:** variable Kostenstellenkosten folgen der Menge, Vorjahresvergleich im gleichen Zeitraum,
+  Musterempfehlungen passen zum Prozess, Demo-Antworten sind als solche gekennzeichnet
 - **Abstimmung mit VarianceAI:** Umsatz, Herstellkosten, Kostenstellen und EBIT gegen feste Referenzwerte
 - **SQL-Schutz:** schreibende Anweisungen, Kommentare, mehrere Anweisungen und nicht freigegebene Spalten werden abgelehnt
 - **Faktenprüfung:** unbelegte Zahlen in KI-Texten, Zitate, deutsche Zahlenformate
@@ -290,7 +310,7 @@ Die Oberfläche ist deutsch; die englischen Fachbegriffe stehen als Zweitbeschri
 | Auftrag bis Zahlungseingang | Order-to-Cash (O2C) |
 | Offene Forderungen | Open Receivables |
 | Forderungslaufzeit | Days Sales Outstanding (DSO) |
-| Durchlaufzeit · Engpass · Nacharbeit | Throughput Time · Bottleneck · Rework |
+| Durchlaufzeit · Zeitanteil · Nacharbeit | Throughput Time · Time Share · Rework |
 | Balanced Scorecard, Zielerreichung | Balanced Scorecard, Target Achievement |
 | Management-Bericht · Freigabe | Management Report · Approval |
 | Audit-Protokoll | Audit Log |

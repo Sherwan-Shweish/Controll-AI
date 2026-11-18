@@ -1,16 +1,20 @@
-"""Stufenweise Fixkostendeckung der Suite: welche Kostenstelle welche Deckungsbeitragsstufe belastet.
+"""Ergebnisstufen der Suite: welche Kostenstelle welche Deckungsbeitragsstufe belastet.
 
 Die Kostenstellen sind dieselben wie in VarianceAI (Buchungskreis 1000). Zuordnung zu den Stufen:
 
-* DB I   = Umsatz − variable Standardherstellkosten (in VarianceAI: Konto 700000 „HK“).
-* DB II  = DB I − Erzeugnisfixkosten. Dazu zählen die Fertigungskostenstellen 4100 Gießerei,
+* DB I   = Umsatz − variable Standardherstellkosten (Material, Zukaufteile; in VarianceAI Konto 700000 „HK“).
+* DB II  = DB I − Fertigungs- und Qualitätskosten. Dazu zählen die Fertigungskostenstellen 4100 Gießerei,
   4200 Montage, 4300 Lackiererei (Profit-Center PC-FERT) und die Qualitätssicherung 4500.
   Schlüssel auf Produktkategorien: Anteil an den variablen Herstellkosten (Inanspruchnahme der Fertigung).
-* DB III = DB II − Unternehmensfixkosten, hier die Instandhaltung 4400; Schlüssel: positiver Umsatz.
+* DB III = DB II − Instandhaltungskosten (Kostenstelle 4400); Schlüssel: positiver Umsatz.
 
 Summe DB III = Umsatz − HK − alle Kostenstellenkosten = EBIT in VarianceAI, jeweils centgenau.
-Die Schlüssel sind Annahmen der Kostenrechnung (keine Verursachung im strengen Sinn) und in der Oberfläche
-als solche gekennzeichnet.
+
+Die Kostenstellenkosten sind **keine reinen Fixkosten**: Material, Energie und Fertigungslöhne der
+Kostenstellen verhalten sich beschäftigungsvariabel (so rechnet auch die flexible Plankostenrechnung in
+VarianceAI), Gehälter, Fremdinstandhaltung und Abschreibungen sind fix. Die Stufen sind deshalb eine
+Ergebnisrechnung mit geschlüsselten Kostenstellenkosten und keine Fixkostendeckungsrechnung im strengen Sinn.
+Die Schlüssel sind Annahmen (keine Verursachung) und in der Oberfläche als solche gekennzeichnet.
 """
 
 from __future__ import annotations
@@ -23,20 +27,33 @@ FERTIGUNG = ("4100", "4200", "4300")
 QUALITAET = ("4500",)
 GEMEIN = ("4400",)
 STUFE_JE_KOSTENSTELLE = {
-    **{k: "Erzeugnisfixkosten (DB II)" for k in FERTIGUNG + QUALITAET},
-    **{k: "Unternehmensfixkosten (DB III)" for k in GEMEIN},
+    **{k: "Fertigungs- und Qualitätskosten (DB II)" for k in FERTIGUNG + QUALITAET},
+    **{k: "Instandhaltungskosten (DB III)" for k in GEMEIN},
 }
+# Kostenverhalten je Kostenart, identisch mit VarianceAI (dort Kennzeichen V in der Kostenplanung):
+# Materialaufwand, Energie und Fertigungslöhne folgen der Beschäftigung der Kostenstelle.
+BESCHAEFTIGUNGSVARIABEL = ("400000", "410000", "430000")
 PERIODE = ["geschaeftsjahr", "quartal"]
 
 
-def kostenpools(kosten: pd.DataFrame, kostenstellen: tuple[str, ...], spalte: str = "ist_eur") -> pd.Series:
-    """Summe der Kosten der angegebenen Kostenstellen je Geschäftsjahr und Quartal in Cent."""
+def kostenpools(
+    kosten: pd.DataFrame, kostenstellen: tuple[str, ...], spalte: str = "ist_eur", nur_variabel: bool = False
+) -> pd.Series:
+    """Summe der Kosten der angegebenen Kostenstellen je Geschäftsjahr und Quartal in Cent.
+
+    ``nur_variabel`` beschränkt auf die beschäftigungsvariablen Kostenarten (Material, Energie, Fertigungslöhne).
+    """
     teil = kosten[kosten.kostenstelle.astype(str).isin(kostenstellen)]
+    if nur_variabel:
+        teil = teil[teil.kostenart.astype(str).isin(BESCHAEFTIGUNGSVARIABEL)]
     return teil.assign(cent=teil[spalte].map(cent)).groupby(PERIODE)["cent"].sum().astype("int64")
 
 
 def produktfixkosten(transaktionen: pd.DataFrame, kosten: pd.DataFrame) -> pd.DataFrame:
-    """Erzeugnisfixkosten je Geschäftsjahr, Quartal und Produktkategorie (centgenau, ohne Restcent-Verlust).
+    """Fertigungs- und Qualitätskosten je Geschäftsjahr, Quartal und Produktkategorie (centgenau).
+
+    Der Tabellenname ``produktfixkosten`` ist technisch; inhaltlich sind es die geschlüsselten Kosten der
+    Kostenstellen 4100–4300 und 4500 (beschäftigungsvariable und fixe Kostenarten).
 
     Args:
         transaktionen: Fakturapositionen; zur Prüfung markierte Ausreißer werden nicht als Schlüssel verwendet.
@@ -79,6 +96,6 @@ def tabelle_produktfixkosten(transaktionen: pd.DataFrame, kosten: pd.DataFrame) 
 
 
 def gemeinkosten(kosten: pd.DataFrame, spalte: str = "ist_eur") -> pd.DataFrame:
-    """Unternehmensfixkosten (DB III) je Geschäftsjahr und Quartal in Euro."""
+    """Instandhaltungskosten (DB III) je Geschäftsjahr und Quartal in Euro."""
     pool = kostenpools(kosten, GEMEIN, spalte)
     return (pool / 100).rename(spalte).reset_index()

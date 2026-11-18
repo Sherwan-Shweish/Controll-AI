@@ -167,6 +167,13 @@ def bsc(PERSPEKTIVEN, agent, audit, bsc_reihe, diagramm, gj, ki_fehler, modus):
         "Die KI ordnet Digitalisierungsprojekte aus Berichtstexten den vier Perspektiven zu – mit Belegzitat. "
         "Sie schlägt vor, der Mensch entscheidet. Die Beispieltexte sind frei erfunden."
     )
+    if modus.demo:
+        st.info(
+            "Demo-Modus ohne KI-Schlüssel: Vorschläge, Begründungen und Konfidenzwerte sind hinterlegte "
+            "Musterantworten. Sie zeigen den Ablauf mit Zitatprüfung und menschlicher Entscheidung – "
+            "nicht die Leistung eines Sprachmodells."
+        )
+    vorschlag = "Muster-Vorschlag (Demo)" if modus.demo else "KI-Vorschlag"
     quelle = st.radio(
         "Textquelle",
         ["Beispieltexte (12 fiktive Berichtsauszüge)", "Eigene Datei (PDF oder TXT)"],
@@ -243,7 +250,7 @@ def bsc(PERSPEKTIVEN, agent, audit, bsc_reihe, diagramm, gj, ki_fehler, modus):
     elif basis is not None:
         abschnitt("Prüfen und entscheiden")
         st.caption(
-            "Spalte **Finale Perspektive** ändern, um den KI-Vorschlag zu überstimmen; "
+            "Spalte **Finale Perspektive** ändern, um den Vorschlag zu überstimmen; "
             "**Geprüft** anhaken, um die Entscheidung freizugeben. Markierte Fälle zuerst "
             "prüfen."
         )
@@ -279,7 +286,7 @@ def bsc(PERSPEKTIVEN, agent, audit, bsc_reihe, diagramm, gj, ki_fehler, modus):
             column_config={
                 "text_id": "Text",
                 "titel": st.column_config.TextColumn("Projekt", width="medium"),
-                "ki_perspektive": "KI-Vorschlag",
+                "ki_perspektive": vorschlag,
                 "ki_technologiefeld": "Technologiefeld",
                 "ki_konfidenz": st.column_config.TextColumn("Konfidenz (%)"),
                 "zitat_verifiziert": st.column_config.CheckboxColumn("Zitat belegt"),
@@ -326,11 +333,11 @@ def bsc(PERSPEKTIVEN, agent, audit, bsc_reihe, diagramm, gj, ki_fehler, modus):
                 ki_treffer = (mit_ref["ki_perspektive"] == mit_ref["referenz"]).mean() * 100
                 final_treffer = (mit_ref["finale_perspektive"] == mit_ref["referenz"]).mean() * 100
                 sicherer_text(
-                    f"**Abgleich mit den Referenzlabels:** KI-Vorschlag {de(ki_treffer, 0)} % · "
+                    f"**Abgleich mit den Referenzlabels:** {vorschlag} {de(ki_treffer, 0)} % · "
                     f"nach menschlicher Prüfung {de(final_treffer, 0)} % ({len(mit_ref)} Projekte)"
                 )
         with rechts:
-            sicherer_text("**Prüfansicht: Originalzitat → KI-Vorschlag → Entscheidung**")
+            sicherer_text(f"**Prüfansicht: Originalzitat → {vorschlag} → Entscheidung**")
             projekt = st.selectbox(
                 "Projekt",
                 ergebnis.index,
@@ -354,7 +361,7 @@ def bsc(PERSPEKTIVEN, agent, audit, bsc_reihe, diagramm, gj, ki_fehler, modus):
                     st.error(
                         "Zitat nicht wörtlich im Originaltext – möglicherweise umformuliert. Bitte prüfen.", icon="❌"
                     )
-                sicherer_text("**② KI-Vorschlag (unverändert gespeichert)**")
+                sicherer_text(f"**② {vorschlag} (unverändert gespeichert)**")
                 sicherer_text(
                     f"{p['ki_perspektive']} · {p['ki_technologiefeld']} · Konfidenz "
                     f"{de(p['ki_konfidenz'] * 100, 0)} %  \n*{p['ki_begruendung']}*"
@@ -396,10 +403,19 @@ def prozess(
             "Process Overview",
         )
     )
-    st.error(f"Engpass: {eng['uebergang']} · {de(eng['anteil_an_gesamtzeit_pct'], 1)} % der gesamten Übergangszeit.")
+    hinweis = (
+        " Darin liegt das Zahlungsziel von 30 Tagen: vertragliche Wartezeit, kein Kapazitätsengpass. "
+        "Steuerbar ist die Zeit nach Fälligkeit."
+        if eng["uebergang"].startswith("Faktura buchen")
+        else ""
+    )
+    st.error(
+        f"Größter Zeitanteil: {eng['uebergang']} · {de(eng['anteil_an_gesamtzeit_pct'], 1)} % der gesamten "
+        f"Übergangszeit.{hinweis}"
+    )
     links, rechts = st.columns([1.4, 1])
     with links:
-        abschnitt("Wartezeit nach Übergang", "Waiting Time")
+        abschnitt("Zeitanteil nach Übergang", "Time Share by Transition")
         ue = pa.uebergaenge.head(8).copy()
         ue["Übergang"] = ue["von"] + " → " + ue["nach"]
         diagramm(dia.balken(ue, "Übergang", "anteil_gesamtzeit_pct", "%", kosten=True, hoehe=320))
@@ -534,8 +550,9 @@ def cockpit(
         abschnitt("DB II nach Produktgruppe", "Contribution Margin II")
         diagramm(dia.balken(dbj, "produktkategorie", "db_ii_eur", "€"))
     st.caption(
-        "DB I = Umsatz − variable Herstellkosten · DB II = DB I − Erzeugnisfixkosten · "
-        "EBIT = DB II − Unternehmensfixkosten"
+        "DB I = Umsatz − variable Herstellkosten (Material, Zukaufteile) · DB II = DB I − Fertigungs- und "
+        "Qualitätskosten der Kostenstellen · EBIT (vereinfacht, ohne Vertrieb und Verwaltung) = DB II − "
+        "Instandhaltungskosten"
     )
     with st.expander("Details: Deckungsbeiträge und Datenprüfung", expanded=False):
         tabelle_anzeigen(dbj, hide_index=True, width="stretch")

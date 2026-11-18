@@ -86,7 +86,7 @@ def main(ziel: Path) -> None:
             "kostenstufen": {
                 "db_ii_fertigung": list(FERTIGUNG),
                 "db_ii_qualitaet": list(QUALITAET),
-                "db_iii_unternehmen": list(GEMEIN),
+                "db_iii_instandhaltung": list(GEMEIN),
             },
             "suite_abgleich": abgleich,
             "summen": _zeilen(verdichte(jahr, []))[0],
